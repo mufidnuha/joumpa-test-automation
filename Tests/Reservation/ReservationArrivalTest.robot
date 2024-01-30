@@ -47,8 +47,8 @@ TC-M07-002
 
     User located in "Home" page
     HomePage.Search and select the airport in the "Origin" field
-    ...    ${airport_surabaya}[keyword]
-    ...    ${airport_surabaya}[airport]
+    ...    ${prod_airport_surabaya}[keyword]
+    ...    ${prod_airport_surabaya}[airport]
     Click Button    ${homepage_reservation_booking_button}
 
     The "Reservation" page display correctly
@@ -56,18 +56,18 @@ TC-M07-002
     ...    ${FLIGHT_TYPE_ARRIVAL}
     ReservationFlightPage.The "Arrival" is selected as "Flight Type"
     ReservationFlightPage.The "Origin" field is filled with
-    ...    ${airport_surabaya}[airport]
+    ...    ${prod_airport_surabaya}[airport]
 
 TC-M07-003
     [Documentation]    Verify the data transfer and navigate to the "Reservation" page for the "Arrival" flight with the "Origin" and "Destination" fields filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User located in "Home" page
     HomePage.Search and select the airport in the "Origin" field
-    ...    ${airport_singapore}[keyword]
-    ...    ${airport_singapore}[airport]
+    ...    ${prod_airport_singapore}[keyword]
+    ...    ${prod_airport_singapore}[airport]
     HomePage.Search and select the airport in the "Destination" field
-    ...    ${airport_tangerang}[keyword]
-    ...    ${airport_tangerang}[airport]
+    ...    ${prod_airport_tangerang}[keyword]
+    ...    ${prod_airport_tangerang}[airport]
     Click Button    ${homepage_reservation_booking_button}
 
     The "Reservation" page display correctly
@@ -75,9 +75,9 @@ TC-M07-003
     ...    ${FLIGHT_TYPE_ARRIVAL}
     ...    ${MAG_INTERNATIONAL}
     ReservationFlightPage.The "Arrival" is selected as "Flight Type"
-    ReservationFlightPage.The "Origin" field is filled with    ${airport_singapore}[airport]
+    ReservationFlightPage.The "Origin" field is filled with    ${prod_airport_singapore}[airport]
     ReservationFlightPage.The "Destination" field is filled with
-    ...    ${airport_tangerang}[airport]
+    ...    ${prod_airport_tangerang}[airport]
     ReservationFlightPage.The "Products" field contain MEET & GREET INTERNATIONAL and its description
 
 TC-M07-004
@@ -85,79 +85,79 @@ TC-M07-004
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User located in "Home" page
     HomePage.Search and select the airport in the "Origin" field
-    ...    ${airport_samarinda}[keyword]
-    ...    ${airport_samarinda}[airport]
-    HomePage.Input date in "Arrival Date" field    ${arrival_date_valid}
+    ...    ${prod_airport_samarinda}[keyword]
+    ...    ${prod_airport_samarinda}[airport]
+    HomePage.Input date in "Arrival Date" field    ${prod_arrival_date_valid}
     Click Button    ${homepage_reservation_booking_button}
 
     The "Reservation" page display correctly
     ...    ${LANGUAGE_DEFAULT}
     ...    ${FLIGHT_TYPE_ARRIVAL}
     ReservationFlightPage.The "Arrival" is selected as "Flight Type"
-    ReservationFlightPage.The "Origin" field is filled with    ${airport_samarinda}[airport]
+    ReservationFlightPage.The "Origin" field is filled with    ${prod_airport_samarinda}[airport]
     ReservationFlightPage.The "Arrival Date" field is filled with
-    ...    ${arrival_date_valid_dict}[date]
-    ...    ${arrival_date_valid_dict}[month]
-    ...    ${arrival_date_valid_dict}[year]
+    ...    ${prod_arrival_date_valid_dict}[date]
+    ...    ${prod_arrival_date_valid_dict}[month]
+    ...    ${prod_arrival_date_valid_dict}[year]
 
 TC-M07-005
     [Documentation]    Verify the data transfer and navigate to "Reservation" page for the "Arrival" flight with "Destination" field filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User located in "Home" page
     HomePage.Search and select the airport in the "Destination" field
-    ...    ${airport_yogyakarta}[keyword]
-    ...    ${airport_yogyakarta}[airport]
+    ...    ${prod_airport_yogyakarta}[keyword]
+    ...    ${prod_airport_yogyakarta}[airport]
     Click Button    ${homepage_reservation_booking_button}
 
     The "Reservation" page display correctly    ${LANGUAGE_DEFAULT}    ${FLIGHT_TYPE_ARRIVAL}
     ReservationFlightPage.The "Arrival" is selected as "Flight Type"
     ReservationFlightPage.The "Destination" field is filled with
-    ...    ${airport_yogyakarta}[airport]
+    ...    ${prod_airport_yogyakarta}[airport]
 
 TC-M07-006
     [Documentation]    Verify the data transfer and navigate to "Reservation" page for the "Arrival" flight with "Destination" and "Arrival Date" fields filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User located in "Home" page
     HomePage.Search and select the airport in the "Destination" field
-    ...    ${airport_balikpapan}[keyword]
-    ...    ${airport_balikpapan}[airport]
-    HomePage.Input date in "Arrival Date" field    ${arrival_date_valid}
+    ...    ${prod_airport_balikpapan}[keyword]
+    ...    ${prod_airport_balikpapan}[airport]
+    HomePage.Input date in "Arrival Date" field    ${prod_arrival_date_valid}
     Click Button    ${homepage_reservation_booking_button}
 
     The "Reservation" page display correctly    ${LANGUAGE_DEFAULT}    ${FLIGHT_TYPE_ARRIVAL}
     ReservationFlightPage.The "Arrival" is selected as "Flight Type"
     ReservationFlightPage.The "Destination" field is filled with
-    ...    ${airport_balikpapan}[airport]
+    ...    ${prod_airport_balikpapan}[airport]
     ReservationFlightPage.The "Arrival Date" field is filled with
-    ...    ${arrival_date_valid_dict}[date]
-    ...    ${arrival_date_valid_dict}[month]
-    ...    ${arrival_date_valid_dict}[year]
+    ...    ${prod_arrival_date_valid_dict}[date]
+    ...    ${prod_arrival_date_valid_dict}[month]
+    ...    ${prod_arrival_date_valid_dict}[year]
 
 TC-M07-007
     [Documentation]    Verify the data transfer and navigate to "Reservation" page for the "Arrival" flight with "Arrival Date" field filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User located in "Home" page
-    HomePage.Input date in "Arrival Date" field    ${arrival_date_valid}
+    HomePage.Input date in "Arrival Date" field    ${prod_arrival_date_valid}
     Click Button    ${homepage_reservation_booking_button}
 
     The "Reservation" page display correctly    ${LANGUAGE_DEFAULT}    ${FLIGHT_TYPE_ARRIVAL}
     ReservationFlightPage.The "Arrival" is selected as "Flight Type"
     ReservationFlightPage.The "Arrival Date" field is filled with
-    ...    ${arrival_date_valid_dict}[date]
-    ...    ${arrival_date_valid_dict}[month]
-    ...    ${arrival_date_valid_dict}[year]
+    ...    ${prod_arrival_date_valid_dict}[date]
+    ...    ${prod_arrival_date_valid_dict}[month]
+    ...    ${prod_arrival_date_valid_dict}[year]
 
 TC-M07-008
     [Documentation]    Verify the data transfer and navigate to "Reservation" page for the "Arrival" flight with all fields filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User located in "Home" page
     HomePage.Search and select the airport in the "Origin" field
-    ...    ${airport_surabaya}[keyword]
-    ...    ${airport_surabaya}[airport]
+    ...    ${prod_airport_surabaya}[keyword]
+    ...    ${prod_airport_surabaya}[airport]
     HomePage.Search and select the airport in the "Destination" field
-    ...    ${airport_balikpapan}[keyword]
-    ...    ${airport_balikpapan}[airport]
-    HomePage.Input date in "Arrival Date" field    ${arrival_date_valid}
+    ...    ${prod_airport_balikpapan}[keyword]
+    ...    ${prod_airport_balikpapan}[airport]
+    HomePage.Input date in "Arrival Date" field    ${prod_arrival_date_valid}
     Click Button    ${homepage_reservation_booking_button}
 
     The "Reservation" page display correctly
@@ -166,20 +166,20 @@ TC-M07-008
     ...    ${MAG_DOMESTIC}
     ReservationFlightPage.The "Arrival" is selected as "Flight Type"
     ReservationFlightPage.The "Origin" field is filled with
-    ...    ${airport_surabaya}[airport]
+    ...    ${prod_airport_surabaya}[airport]
     ReservationFlightPage.The "Destination" field is filled with
-    ...    ${airport_balikpapan}[airport]
+    ...    ${prod_airport_balikpapan}[airport]
     ReservationFlightPage.The "Arrival Date" field is filled with
-    ...    ${arrival_date_valid_dict}[date]
-    ...    ${arrival_date_valid_dict}[month]
-    ...    ${arrival_date_valid_dict}[year]
+    ...    ${prod_arrival_date_valid_dict}[date]
+    ...    ${prod_arrival_date_valid_dict}[month]
+    ...    ${prod_arrival_date_valid_dict}[year]
     ReservationFlightPage.The "Products" field contain MEET & GREET DOMESTIC and its description
 
 TC-M07-009
     [Documentation]    Verify an alerts appears when input "Arrival Date" less than today in Initial Form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User located in "Home" page
-    HomePage.Input date in "Arrival Date" field    ${arrival_date_invalid}
+    HomePage.Input date in "Arrival Date" field    ${prod_arrival_date_invalid}
     Click Button    ${homepage_reservation_booking_button}
 
     Show Alerts    Date must be greater than equal to    ${True}
@@ -191,20 +191,20 @@ TC-M07-010
 
     Click Element    ${reservation_flight_arrival_button}
     ReservationFlightPage.Search and select the airport in the "Origin" field
-    ...    ${airport_surabaya}[keyword]
-    ...    ${airport_surabaya}[airport]
+    ...    ${prod_airport_surabaya}[keyword]
+    ...    ${prod_airport_surabaya}[airport]
 
     ReservationFlightPage.Search and select the airport in the "Destination" field
-    ...    ${airport_semarang}[keyword]
-    ...    ${airport_semarang}[airport]
+    ...    ${prod_airport_semarang}[keyword]
+    ...    ${prod_airport_semarang}[airport]
 
     ReservationFlightPage.Search and select the airport in the "Airline" field
-    ...    ${airline_valid}[keyword]
-    ...    ${airline_valid}[airline]
+    ...    ${prod_airline_valid}[keyword]
+    ...    ${prod_airline_valid}[airline]
 
-    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${flight_number_valid}
-    Input Text    ${reservation_flight_flight_info_date_input}    ${arrival_date_valid}
-    Input Text    ${reservation_flight_flight_info_time_input}    ${est_arrival_time_valid}
+    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${prod_flight_number_valid}
+    Input Text    ${reservation_flight_flight_info_date_input}    ${prod_arrival_date_valid}
+    Input Text    ${reservation_flight_flight_info_time_input}    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_flight_products}
     Click Button    ${reservation_flight_next_button}
@@ -226,17 +226,17 @@ TC-M07-012
     User located in "Reservation" Page
 
     ReservationFlightPage.Search and select the airport in the "Origin" field
-    ...    ${airport_surabaya}[keyword]
-    ...    ${airport_surabaya}[airport]
+    ...    ${prod_airport_surabaya}[keyword]
+    ...    ${prod_airport_surabaya}[airport]
     ReservationFlightPage.Search and select the airport in the "Destination" field
-    ...    ${airport_semarang}[keyword]
-    ...    ${airport_semarang}[airport]
+    ...    ${prod_airport_semarang}[keyword]
+    ...    ${prod_airport_semarang}[airport]
     ReservationFlightPage.Search and select the airport in the "Airline" field
-    ...    ${airline_valid}[keyword]
-    ...    ${airline_valid}[airline]
-    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${flight_number_valid}
-    Input Text    ${reservation_flight_flight_info_date_input}    ${arrival_date_valid}
-    Input Text    ${reservation_flight_flight_info_time_input}    ${est_arrival_time_valid}
+    ...    ${prod_airline_valid}[keyword]
+    ...    ${prod_airline_valid}[airline]
+    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${prod_flight_number_valid}
+    Input Text    ${reservation_flight_flight_info_date_input}    ${prod_arrival_date_valid}
+    Input Text    ${reservation_flight_flight_info_time_input}    ${prod_est_arrival_time_valid}
     Click Element    ${reservation_flight_products}
     Click Button    ${reservation_flight_next_button}
 
@@ -250,14 +250,14 @@ TC-M07-013
 
     Click Element    ${reservation_flight_arrival_button}
     ReservationFlightPage.Search and select the airport in the "Destination" field
-    ...    ${airport_semarang}[keyword]
-    ...    ${airport_semarang}[airport]
+    ...    ${prod_airport_semarang}[keyword]
+    ...    ${prod_airport_semarang}[airport]
     ReservationFlightPage.Search and select the airport in the "Airline" field
-    ...    ${airline_valid}[keyword]
-    ...    ${airline_valid}[airline]
-    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${flight_number_valid}
-    Input Text    ${reservation_flight_flight_info_date_input}    ${arrival_date_valid}
-    Input Text    ${reservation_flight_flight_info_time_input}    ${est_arrival_time_valid}
+    ...    ${prod_airline_valid}[keyword]
+    ...    ${prod_airline_valid}[airline]
+    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${prod_flight_number_valid}
+    Input Text    ${reservation_flight_flight_info_date_input}    ${prod_arrival_date_valid}
+    Input Text    ${reservation_flight_flight_info_time_input}    ${prod_est_arrival_time_valid}
 
     Click Button    ${reservation_flight_next_button}
 
@@ -271,14 +271,14 @@ TC-M07-014
 
     Click Element    ${reservation_flight_arrival_button}
     ReservationFlightPage.Search and select the airport in the "Origin" field
-    ...    ${airport_surabaya}[keyword]
-    ...    ${airport_surabaya}[airport]
+    ...    ${prod_airport_surabaya}[keyword]
+    ...    ${prod_airport_surabaya}[airport]
     ReservationFlightPage.Search and select the airport in the "Airline" field
-    ...    ${airline_valid}[keyword]
-    ...    ${airline_valid}[airline]
-    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${flight_number_valid}
-    Input Text    ${reservation_flight_flight_info_date_input}    ${arrival_date_valid}
-    Input Text    ${reservation_flight_flight_info_time_input}    ${est_arrival_time_valid}
+    ...    ${prod_airline_valid}[keyword]
+    ...    ${prod_airline_valid}[airline]
+    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${prod_flight_number_valid}
+    Input Text    ${reservation_flight_flight_info_date_input}    ${prod_arrival_date_valid}
+    Input Text    ${reservation_flight_flight_info_time_input}    ${prod_est_arrival_time_valid}
 
     Click Button    ${reservation_flight_next_button}
 
@@ -292,14 +292,14 @@ TC-M07-015
 
     Click Element    ${reservation_flight_arrival_button}
     ReservationFlightPage.Search and select the airport in the "Origin" field
-    ...    ${airport_surabaya}[keyword]
-    ...    ${airport_surabaya}[airport]
+    ...    ${prod_airport_surabaya}[keyword]
+    ...    ${prod_airport_surabaya}[airport]
     ReservationFlightPage.Search and select the airport in the "Destination" field
-    ...    ${airport_semarang}[keyword]
-    ...    ${airport_semarang}[airport]
-    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${flight_number_valid}
-    Input Text    ${reservation_flight_flight_info_date_input}    ${arrival_date_valid}
-    Input Text    ${reservation_flight_flight_info_time_input}    ${est_arrival_time_valid}
+    ...    ${prod_airport_semarang}[keyword]
+    ...    ${prod_airport_semarang}[airport]
+    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${prod_flight_number_valid}
+    Input Text    ${reservation_flight_flight_info_date_input}    ${prod_arrival_date_valid}
+    Input Text    ${reservation_flight_flight_info_time_input}    ${prod_est_arrival_time_valid}
     Click Element    ${reservation_flight_products}
 
     Click Button    ${reservation_flight_next_button}
@@ -313,16 +313,16 @@ TC-M07-016
 
     Click Element    ${reservation_flight_arrival_button}
     ReservationFlightPage.Search and select the airport in the "Origin" field
-    ...    ${airport_surabaya}[keyword]
-    ...    ${airport_surabaya}[airport]
+    ...    ${prod_airport_surabaya}[keyword]
+    ...    ${prod_airport_surabaya}[airport]
     ReservationFlightPage.Search and select the airport in the "Destination" field
-    ...    ${airport_semarang}[keyword]
-    ...    ${airport_semarang}[airport]
+    ...    ${prod_airport_semarang}[keyword]
+    ...    ${prod_airport_semarang}[airport]
     ReservationFlightPage.Search and select the airport in the "Airline" field
-    ...    ${airline_valid}[keyword]
-    ...    ${airline_valid}[airline]
-    Input Text    ${reservation_flight_flight_info_date_input}    ${arrival_date_valid}
-    Input Text    ${reservation_flight_flight_info_time_input}    ${est_arrival_time_valid}
+    ...    ${prod_airline_valid}[keyword]
+    ...    ${prod_airline_valid}[airline]
+    Input Text    ${reservation_flight_flight_info_date_input}    ${prod_arrival_date_valid}
+    Input Text    ${reservation_flight_flight_info_time_input}    ${prod_est_arrival_time_valid}
     Click Element    ${reservation_flight_products}
 
     Click Button    ${reservation_flight_next_button}
@@ -337,16 +337,16 @@ TC-M07-017
 
     Click Element    ${reservation_flight_arrival_button}
     ReservationFlightPage.Search and select the airport in the "Origin" field
-    ...    ${airport_surabaya}[keyword]
-    ...    ${airport_surabaya}[airport]
+    ...    ${prod_airport_surabaya}[keyword]
+    ...    ${prod_airport_surabaya}[airport]
     ReservationFlightPage.Search and select the airport in the "Destination" field
-    ...    ${airport_semarang}[keyword]
-    ...    ${airport_semarang}[airport]
+    ...    ${prod_airport_semarang}[keyword]
+    ...    ${prod_airport_semarang}[airport]
     ReservationFlightPage.Search and select the airport in the "Airline" field
-    ...    ${airline_valid}[keyword]
-    ...    ${airline_valid}[airline]
-    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${flight_number_valid}
-    Input Text    ${reservation_flight_flight_info_time_input}    ${est_arrival_time_valid}
+    ...    ${prod_airline_valid}[keyword]
+    ...    ${prod_airline_valid}[airline]
+    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${prod_flight_number_valid}
+    Input Text    ${reservation_flight_flight_info_time_input}    ${prod_est_arrival_time_valid}
     Click Element    ${reservation_flight_products}
 
     Click Button    ${reservation_flight_next_button}
@@ -361,16 +361,16 @@ TC-M07-018
 
     Click Element    ${reservation_flight_arrival_button}
     ReservationFlightPage.Search and select the airport in the "Origin" field
-    ...    ${airport_surabaya}[keyword]
-    ...    ${airport_surabaya}[airport]
+    ...    ${prod_airport_surabaya}[keyword]
+    ...    ${prod_airport_surabaya}[airport]
     ReservationFlightPage.Search and select the airport in the "Destination" field
-    ...    ${airport_semarang}[keyword]
-    ...    ${airport_semarang}[airport]
+    ...    ${prod_airport_semarang}[keyword]
+    ...    ${prod_airport_semarang}[airport]
     ReservationFlightPage.Search and select the airport in the "Airline" field
-    ...    ${airline_valid}[keyword]
-    ...    ${airline_valid}[airline]
-    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${flight_number_valid}
-    Input Text    ${reservation_flight_flight_info_date_input}    ${arrival_date_valid}
+    ...    ${prod_airline_valid}[keyword]
+    ...    ${prod_airline_valid}[airline]
+    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${prod_flight_number_valid}
+    Input Text    ${reservation_flight_flight_info_date_input}    ${prod_arrival_date_valid}
     Click Element    ${reservation_flight_products}
 
     Click Button    ${reservation_flight_next_button}
@@ -384,17 +384,17 @@ TC-M07-019
 
     Click Element    ${reservation_flight_arrival_button}
     ReservationFlightPage.Search and select the airport in the "Origin" field
-    ...    ${airport_surabaya}[keyword]
-    ...    ${airport_surabaya}[airport]
+    ...    ${prod_airport_surabaya}[keyword]
+    ...    ${prod_airport_surabaya}[airport]
     ReservationFlightPage.Search and select the airport in the "Destination" field
-    ...    ${airport_semarang}[keyword]
-    ...    ${airport_semarang}[airport]
+    ...    ${prod_airport_semarang}[keyword]
+    ...    ${prod_airport_semarang}[airport]
     ReservationFlightPage.Search and select the airport in the "Airline" field
-    ...    ${airline_valid}[keyword]
-    ...    ${airline_valid}[airline]
-    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${flight_number_valid}
-    Input Text    ${reservation_flight_flight_info_date_input}    ${arrival_date_valid}
-    Input Text    ${reservation_flight_flight_info_time_input}    ${est_arrival_time_valid}
+    ...    ${prod_airline_valid}[keyword]
+    ...    ${prod_airline_valid}[airline]
+    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${prod_flight_number_valid}
+    Input Text    ${reservation_flight_flight_info_date_input}    ${prod_arrival_date_valid}
+    Input Text    ${reservation_flight_flight_info_time_input}    ${prod_est_arrival_time_valid}
 
     Click Button    ${reservation_flight_next_button}
 
@@ -407,12 +407,12 @@ TC-M07-019
 #    Click Element    ${reservation_flight_arrival_button}
 
 #    ReservationFlightPage.Search and select the airport in the "Origin" field
-#    ...    ${airport_surabaya}[keyword]
-#    ...    ${airport_surabaya}[airport]
+#    ...    ${prod_airport_surabaya}[keyword]
+#    ...    ${prod_airport_surabaya}[airport]
 #    ...
 #    ReservationFlightPage.Search and select the airport in the "Destination" field
-#    ...    ${airport_surabaya}[keyword]
-#    ...    ${airport_surabaya}[airport]
+#    ...    ${prod_airport_surabaya}[keyword]
+#    ...    ${prod_airport_surabaya}[airport]
 
 #    Show Alerts    Can't select the same airport!
 
@@ -423,17 +423,17 @@ TC-M07-021
 
     Click Element    ${reservation_flight_arrival_button}
     ReservationFlightPage.Search and select the airport in the "Origin" field
-    ...    ${airport_surabaya}[keyword]
-    ...    ${airport_surabaya}[airport]
+    ...    ${prod_airport_surabaya}[keyword]
+    ...    ${prod_airport_surabaya}[airport]
     ReservationFlightPage.Search and select the airport in the "Destination" field
-    ...    ${airport_semarang}[keyword]
-    ...    ${airport_semarang}[airport]
+    ...    ${prod_airport_semarang}[keyword]
+    ...    ${prod_airport_semarang}[airport]
     ReservationFlightPage.Search and select the airport in the "Airline" field
-    ...    ${airline_valid}[keyword]
-    ...    ${airline_valid}[airline]
-    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${flight_number_valid}
-    Input Text    ${reservation_flight_flight_info_date_input}    ${arrival_date_invalid}
-    Input Text    ${reservation_flight_flight_info_time_input}    ${est_arrival_time_valid}
+    ...    ${prod_airline_valid}[keyword]
+    ...    ${prod_airline_valid}[airline]
+    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${prod_flight_number_valid}
+    Input Text    ${reservation_flight_flight_info_date_input}    ${prod_arrival_date_invalid}
+    Input Text    ${reservation_flight_flight_info_time_input}    ${prod_est_arrival_time_valid}
     Click Element    ${reservation_flight_products}
 
     Click Button    ${reservation_flight_next_button}
@@ -447,18 +447,18 @@ TC-M07-022
 
     Click Element    ${reservation_flight_arrival_button}
     ReservationFlightPage.Search and select the airport in the "Origin" field
-    ...    ${airport_surabaya}[keyword]
-    ...    ${airport_surabaya}[airport]
+    ...    ${prod_airport_surabaya}[keyword]
+    ...    ${prod_airport_surabaya}[airport]
     ReservationFlightPage.Search and select the airport in the "Destination" field
-    ...    ${airport_semarang}[keyword]
-    ...    ${airport_semarang}[airport]
+    ...    ${prod_airport_semarang}[keyword]
+    ...    ${prod_airport_semarang}[airport]
     ReservationFlightPage.Search and select the airport in the "Airline" field
-    ...    ${airline_valid}[keyword]
-    ...    ${airline_valid}[airline]
-    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${flight_number_valid}
+    ...    ${prod_airline_valid}[keyword]
+    ...    ${prod_airline_valid}[airline]
+    Input Text    ${reservation_flight_flight_info_flight_number_input}    ${prod_flight_number_valid}
 
-    Input Text    ${reservation_flight_flight_info_date_input}    ${current_date}
-    Input Text    ${reservation_flight_flight_info_time_input}    ${current_time}
+    Input Text    ${reservation_flight_flight_info_date_input}    ${prod_current_date}
+    Input Text    ${reservation_flight_flight_info_time_input}    ${prod_current_time}
     Click Element    ${reservation_flight_products}
 
     Click Button    ${reservation_flight_next_button}
@@ -469,25 +469,25 @@ TC-M07-023
     [Documentation]    Verify navigation to "Order Extras" form with all required fields on a form are filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[0]    20s
-    Select "Title" in Passenger Information    ${passenger_title}
-    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${passenger_name}
-    Search and Select "Nationality" in Passenger Information    ${passenger_nationality}
-    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${passenger_email_valid}
-    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${passenger_phone_number}
+    Select "Title" in Passenger Information    ${prod_passenger_title}
+    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${prod_passenger_name}
+    Search and Select "Nationality" in Passenger Information    ${prod_passenger_nationality}
+    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${prod_passenger_email_valid}
+    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_passenger_phone_number}
 
     Click Button    ${reservation_passenger_passenger_save_button}
     Sleep    3s
 
-    Input Text    ${reservation_passenger_notes_input}    ${passenger_notes}
+    Input Text    ${reservation_passenger_notes_input}    ${prod_passenger_notes}
     Click Element    ${reservation_passenger_passenger_as_booker_checkbox}
 
     Click Button    ${reservation_passenger_next_button}
@@ -498,20 +498,20 @@ TC-M07-024
     [Documentation]    Verify navigation to "Order Extras" form with all required fields are filled in excepts Passenger Notes field
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[0]    20s
-    Select "Title" in Passenger Information    ${passenger_title}
-    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${passenger_name}
-    Search and Select "Nationality" in Passenger Information    ${passenger_nationality}
-    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${passenger_email_valid}
-    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${passenger_phone_number}
+    Select "Title" in Passenger Information    ${prod_passenger_title}
+    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${prod_passenger_name}
+    Search and Select "Nationality" in Passenger Information    ${prod_passenger_nationality}
+    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${prod_passenger_email_valid}
+    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_passenger_phone_number}
 
     Click Button    ${reservation_passenger_passenger_save_button}
     Sleep    3s
@@ -526,32 +526,34 @@ TC-M07-025
     [Documentation]    Verify navigation to "Order Extras" form with two passenger added and all required fields on a form are filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
     ${sequence_passenger} =    Set Variable    0
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[${sequence_passenger}]    20s
 
-    Select "Title" in Passenger Information    ${passenger_title}    ${sequence_passenger}
-    Input Text    ${reservation_passenger_passenger_name_input}[${sequence_passenger}]    ${passenger_name}
-    Search and Select "Nationality" in Passenger Information    ${passenger_nationality}    ${sequence_passenger}
-    Input Text    ${reservation_passenger_passenger_email_input}[${sequence_passenger}]    ${passenger_email_valid}
-    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${passenger_phone_number}
+    Select "Title" in Passenger Information    ${prod_passenger_title}    ${sequence_passenger}
+    Input Text    ${reservation_passenger_passenger_name_input}[${sequence_passenger}]    ${prod_passenger_name}
+    Search and Select "Nationality" in Passenger Information    ${prod_passenger_nationality}    ${sequence_passenger}
+    Input Text
+    ...    ${reservation_passenger_passenger_email_input}[${sequence_passenger}]
+    ...    ${prod_passenger_email_valid}
+    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_passenger_phone_number}
     Click Button    ${reservation_passenger_passenger_save_button}
     Sleep    3s
 
     Click Element    ${reservation_passenger_add_button}
     ${sequence_passenger} =    Set Variable    1
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[${sequence_passenger}]    20s
-    Select "Title" in Passenger Information    ${second_passenger_title}    ${sequence_passenger}
-    Input Text    ${reservation_passenger_passenger_name_input}[${sequence_passenger}]    ${second_passenger_name}
+    Select "Title" in Passenger Information    ${prod_child_passenger_title}    ${sequence_passenger}
+    Input Text    ${reservation_passenger_passenger_name_input}[${sequence_passenger}]    ${prod_child_passenger_name}
     Search and Select "Nationality" in Passenger Information
-    ...    ${second_passenger_nationality}
+    ...    ${prod_child_passenger_nationality}
     ...    ${sequence_passenger}
     Click Button    ${reservation_passenger_passenger_save_button}
     Sleep    3s
@@ -565,12 +567,12 @@ TC-M07-026
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Button    ${reservation_passenger_next_button}
 
@@ -581,18 +583,18 @@ TC-M07-027
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
-    Select "Title" in Booker Information    ${booker_title}
-    Input Text    ${reservation_passenger_booker_name_input}    ${booker_name}
-    Search and Select "Nationality" in Booker Information    ${booker_nationality}
-    Input Text    ${reservation_passenger_booker_email_input}    ${booker_email_valid}
-    Input Text    ${reservation_passenger_booker_phone_number_input}    ${booker_phone_number}
+    Select "Title" in Booker Information    ${prod_booker_title}
+    Input Text    ${reservation_passenger_booker_name_input}    ${prod_booker_name}
+    Search and Select "Nationality" in Booker Information    ${prod_booker_nationality}
+    Input Text    ${reservation_passenger_booker_email_input}    ${prod_booker_email_valid}
+    Input Text    ${reservation_passenger_booker_phone_number_input}    ${prod_booker_phone_number}
 
     Click Button    ${reservation_passenger_next_button}
 
@@ -602,19 +604,19 @@ TC-M07-028
     [Documentation]    Verify an alerts appears with the "Title" field not filled in Passenger Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[0]    20s
-    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${passenger_name}
-    Search and Select "Nationality" in Passenger Information    ${passenger_nationality}
-    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${passenger_email_valid}
-    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${passenger_phone_number}
+    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${prod_passenger_name}
+    Search and Select "Nationality" in Passenger Information    ${prod_passenger_nationality}
+    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${prod_passenger_email_valid}
+    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_passenger_phone_number}
 
     Click Button    ${reservation_passenger_passenger_save_button}
 
@@ -624,19 +626,19 @@ TC-M07-029
     [Documentation]    Verify an alerts appears with the "Name" field not filled in Passenger Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[0]    20s
-    Select "Title" in Passenger Information    ${passenger_title}
-    Search and Select "Nationality" in Passenger Information    ${passenger_nationality}
-    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${passenger_email_valid}
-    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${passenger_phone_number}
+    Select "Title" in Passenger Information    ${prod_passenger_title}
+    Search and Select "Nationality" in Passenger Information    ${prod_passenger_nationality}
+    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${prod_passenger_email_valid}
+    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_passenger_phone_number}
 
     Click Button    ${reservation_passenger_passenger_save_button}
 
@@ -646,19 +648,19 @@ TC-M07-030
     [Documentation]    Verify an alerts appears with the "Nationality" field not filled in Passenger Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[0]    20s
-    Select "Title" in Passenger Information    ${passenger_title}
-    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${passenger_name}
-    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${passenger_email_valid}
-    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${passenger_phone_number}
+    Select "Title" in Passenger Information    ${prod_passenger_title}
+    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${prod_passenger_name}
+    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${prod_passenger_email_valid}
+    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_passenger_phone_number}
 
     Click Button    ${reservation_passenger_passenger_save_button}
 
@@ -668,19 +670,19 @@ TC-M07-031
     [Documentation]    Verify an alerts appears with the "Email" field not filled in Passenger Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[0]    20s
-    Select "Title" in Passenger Information    ${passenger_title}
-    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${passenger_name}
-    Search and Select "Nationality" in Passenger Information    ${passenger_nationality}
-    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${passenger_phone_number}
+    Select "Title" in Passenger Information    ${prod_passenger_title}
+    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${prod_passenger_name}
+    Search and Select "Nationality" in Passenger Information    ${prod_passenger_nationality}
+    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_passenger_phone_number}
 
     Click Button    ${reservation_passenger_passenger_save_button}
 
@@ -690,19 +692,19 @@ TC-M07-032
     [Documentation]    Verify an alerts appears with the "Phone Number" field not filled in Passenger Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[0]    20s
-    Select "Title" in Passenger Information    ${passenger_title}
-    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${passenger_name}
-    Search and Select "Nationality" in Passenger Information    ${passenger_nationality}
-    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${passenger_email_valid}
+    Select "Title" in Passenger Information    ${prod_passenger_title}
+    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${prod_passenger_name}
+    Search and Select "Nationality" in Passenger Information    ${prod_passenger_nationality}
+    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${prod_passenger_email_valid}
 
     Click Button    ${reservation_passenger_passenger_save_button}
 
@@ -712,31 +714,33 @@ TC-M07-033
     [Documentation]    Verify an alerts appears with the "Name" field not filled in the second passenger
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
     ${sequence_passenger} =    Set Variable    0
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[${sequence_passenger}]    20s
 
-    Select "Title" in Passenger Information    ${passenger_title}    ${sequence_passenger}
-    Input Text    ${reservation_passenger_passenger_name_input}[${sequence_passenger}]    ${passenger_name}
-    Search and Select "Nationality" in Passenger Information    ${passenger_nationality}    ${sequence_passenger}
-    Input Text    ${reservation_passenger_passenger_email_input}[${sequence_passenger}]    ${passenger_email_valid}
-    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${passenger_phone_number}
+    Select "Title" in Passenger Information    ${prod_passenger_title}    ${sequence_passenger}
+    Input Text    ${reservation_passenger_passenger_name_input}[${sequence_passenger}]    ${prod_passenger_name}
+    Search and Select "Nationality" in Passenger Information    ${prod_passenger_nationality}    ${sequence_passenger}
+    Input Text
+    ...    ${reservation_passenger_passenger_email_input}[${sequence_passenger}]
+    ...    ${prod_passenger_email_valid}
+    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_passenger_phone_number}
     Click Button    ${reservation_passenger_passenger_save_button}
     Sleep    3s
 
     Click Element    ${reservation_passenger_add_button}
     ${sequence_passenger} =    Set Variable    1
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[${sequence_passenger}]    20s
-    Select "Title" in Passenger Information    ${second_passenger_title}    ${sequence_passenger}
+    Select "Title" in Passenger Information    ${prod_second_passenger_title}    ${sequence_passenger}
     Search and Select "Nationality" in Passenger Information
-    ...    ${second_passenger_nationality}
+    ...    ${prod_second_passenger_nationality}
     ...    ${sequence_passenger}
     Click Button    ${reservation_passenger_passenger_save_button}
 
@@ -747,19 +751,19 @@ TC-M07-034
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
-    Select "Title" in Passenger Information    ${passenger_title}
-    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${passenger_name}
-    Search and Select "Nationality" in Passenger Information    ${booker_nationality}
-    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${passenger_email_invalid}
-    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${passenger_phone_number}
+    Select "Title" in Passenger Information    ${prod_passenger_title}
+    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${prod_passenger_name}
+    Search and Select "Nationality" in Passenger Information    ${prod_booker_nationality}
+    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${prod_passenger_email_invalid}
+    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_passenger_phone_number}
     Click Button    ${reservation_passenger_passenger_save_button}
 
     Show Alerts    Wrong email format!
@@ -769,28 +773,28 @@ TC-M07-035
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[0]    20s
 
-    Select "Title" in Passenger Information    ${passenger_title}
-    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${passenger_name}
-    Search and Select "Nationality" in Passenger Information    ${booker_nationality}
-    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${passenger_email_valid}
-    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${passenger_phone_number}
+    Select "Title" in Passenger Information    ${prod_passenger_title}
+    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${prod_passenger_name}
+    Search and Select "Nationality" in Passenger Information    ${prod_booker_nationality}
+    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${prod_passenger_email_valid}
+    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_passenger_phone_number}
     Click Button    ${reservation_passenger_passenger_save_button}
     Sleep    3s
 
-    Input Text    ${reservation_passenger_booker_name_input}    ${booker_name}
-    Search and Select "Nationality" in Booker Information    ${booker_nationality}
-    Input Text    ${reservation_passenger_booker_email_input}    ${booker_email_valid}
-    Input Text    ${reservation_passenger_booker_phone_number_input}    ${booker_phone_number}
+    Input Text    ${reservation_passenger_booker_name_input}    ${prod_booker_name}
+    Search and Select "Nationality" in Booker Information    ${prod_booker_nationality}
+    Input Text    ${reservation_passenger_booker_email_input}    ${prod_booker_email_valid}
+    Input Text    ${reservation_passenger_booker_phone_number_input}    ${prod_booker_phone_number}
 
     Click Button    ${reservation_passenger_next_button}
 
@@ -801,28 +805,28 @@ TC-M07-036
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[0]    20s
 
-    Select "Title" in Passenger Information    ${passenger_title}
-    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${passenger_name}
-    Search and Select "Nationality" in Passenger Information    ${booker_nationality}
-    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${passenger_email_valid}
-    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${passenger_phone_number}
+    Select "Title" in Passenger Information    ${prod_passenger_title}
+    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${prod_passenger_name}
+    Search and Select "Nationality" in Passenger Information    ${prod_booker_nationality}
+    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${prod_passenger_email_valid}
+    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_passenger_phone_number}
     Click Button    ${reservation_passenger_passenger_save_button}
     Sleep    3s
 
-    Select "Title" in Booker Information    ${booker_title}
-    Search and Select "Nationality" in Booker Information    ${booker_nationality}
-    Input Text    ${reservation_passenger_booker_email_input}    ${booker_email_valid}
-    Input Text    ${reservation_passenger_booker_phone_number_input}    ${booker_phone_number}
+    Select "Title" in Booker Information    ${prod_booker_title}
+    Search and Select "Nationality" in Booker Information    ${prod_booker_nationality}
+    Input Text    ${reservation_passenger_booker_email_input}    ${prod_booker_email_valid}
+    Input Text    ${reservation_passenger_booker_phone_number_input}    ${prod_booker_phone_number}
 
     Click Button    ${reservation_passenger_next_button}
 
@@ -833,28 +837,28 @@ TC-M07-037
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[0]    20s
 
-    Select "Title" in Passenger Information    ${passenger_title}
-    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${passenger_name}
-    Search and Select "Nationality" in Passenger Information    ${booker_nationality}
-    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${passenger_email_valid}
-    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${passenger_phone_number}
+    Select "Title" in Passenger Information    ${prod_passenger_title}
+    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${prod_passenger_name}
+    Search and Select "Nationality" in Passenger Information    ${prod_booker_nationality}
+    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${prod_passenger_email_valid}
+    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_passenger_phone_number}
     Click Button    ${reservation_passenger_passenger_save_button}
     Sleep    3s
 
-    Select "Title" in Booker Information    ${booker_title}
-    Input Text    ${reservation_passenger_booker_name_input}    ${booker_name}
-    Input Text    ${reservation_passenger_booker_email_input}    ${booker_email_valid}
-    Input Text    ${reservation_passenger_booker_phone_number_input}    ${booker_phone_number}
+    Select "Title" in Booker Information    ${prod_booker_title}
+    Input Text    ${reservation_passenger_booker_name_input}    ${prod_booker_name}
+    Input Text    ${reservation_passenger_booker_email_input}    ${prod_booker_email_valid}
+    Input Text    ${reservation_passenger_booker_phone_number_input}    ${prod_booker_phone_number}
 
     Click Button    ${reservation_passenger_next_button}
 
@@ -865,28 +869,28 @@ TC-M07-038
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[0]    20s
 
-    Select "Title" in Passenger Information    ${passenger_title}
-    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${passenger_name}
-    Search and Select "Nationality" in Passenger Information    ${booker_nationality}
-    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${passenger_email_valid}
-    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${passenger_phone_number}
+    Select "Title" in Passenger Information    ${prod_passenger_title}
+    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${prod_passenger_name}
+    Search and Select "Nationality" in Passenger Information    ${prod_booker_nationality}
+    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${prod_passenger_email_valid}
+    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_passenger_phone_number}
     Click Button    ${reservation_passenger_passenger_save_button}
     Sleep    3s
 
-    Select "Title" in Booker Information    ${booker_title}
-    Input Text    ${reservation_passenger_booker_name_input}    ${booker_name}
-    Search and Select "Nationality" in Booker Information    ${booker_nationality}
-    Input Text    ${reservation_passenger_booker_phone_number_input}    ${booker_phone_number}
+    Select "Title" in Booker Information    ${prod_booker_title}
+    Input Text    ${reservation_passenger_booker_name_input}    ${prod_booker_name}
+    Search and Select "Nationality" in Booker Information    ${prod_booker_nationality}
+    Input Text    ${reservation_passenger_booker_phone_number_input}    ${prod_booker_phone_number}
 
     Click Button    ${reservation_passenger_next_button}
 
@@ -897,29 +901,29 @@ TC-M07-039
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[0]    20s
 
-    Select "Title" in Passenger Information    ${passenger_title}
-    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${passenger_name}
-    Search and Select "Nationality" in Passenger Information    ${booker_nationality}
-    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${passenger_email_valid}
-    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${passenger_phone_number}
+    Select "Title" in Passenger Information    ${prod_passenger_title}
+    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${prod_passenger_name}
+    Search and Select "Nationality" in Passenger Information    ${prod_booker_nationality}
+    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${prod_passenger_email_valid}
+    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_passenger_phone_number}
     Click Button    ${reservation_passenger_passenger_save_button}
     Sleep    3s
 
-    Select "Title" in Booker Information    ${booker_title}
-    Input Text    ${reservation_passenger_booker_name_input}    ${booker_name}
-    Search and Select "Nationality" in Booker Information    ${booker_nationality}
-    Input Text    ${reservation_passenger_booker_email_input}    ${booker_email_invalid}
-    Input Text    ${reservation_passenger_booker_phone_number_input}    ${booker_phone_number}
+    Select "Title" in Booker Information    ${prod_booker_title}
+    Input Text    ${reservation_passenger_booker_name_input}    ${prod_booker_name}
+    Search and Select "Nationality" in Booker Information    ${prod_booker_nationality}
+    Input Text    ${reservation_passenger_booker_email_input}    ${prod_booker_email_invalid}
+    Input Text    ${reservation_passenger_booker_phone_number_input}    ${prod_booker_phone_number}
 
     Click Button    ${reservation_passenger_next_button}
 
@@ -930,28 +934,28 @@ TC-M07-040
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_semarang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_semarang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
 
     Click Element    ${reservation_passenger_add_button}
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[0]    20s
 
-    Select "Title" in Passenger Information    ${passenger_title}
-    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${passenger_name}
-    Search and Select "Nationality" in Passenger Information    ${booker_nationality}
-    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${passenger_email_valid}
-    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${passenger_phone_number}
+    Select "Title" in Passenger Information    ${prod_passenger_title}
+    Input Text    ${reservation_passenger_passenger_name_input}[0]    ${prod_passenger_name}
+    Search and Select "Nationality" in Passenger Information    ${prod_booker_nationality}
+    Input Text    ${reservation_passenger_passenger_email_input}[0]    ${prod_passenger_email_valid}
+    Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_passenger_phone_number}
     Click Button    ${reservation_passenger_passenger_save_button}
     Sleep    3s
 
-    Select "Title" in Booker Information    ${booker_title}
-    Input Text    ${reservation_passenger_booker_name_input}    ${booker_name}
-    Search and Select "Nationality" in Booker Information    ${booker_nationality}
-    Input Text    ${reservation_passenger_booker_email_input}    ${booker_email_valid}
+    Select "Title" in Booker Information    ${prod_booker_title}
+    Input Text    ${reservation_passenger_booker_name_input}    ${prod_booker_name}
+    Search and Select "Nationality" in Booker Information    ${prod_booker_nationality}
+    Input Text    ${reservation_passenger_booker_email_input}    ${prod_booker_email_valid}
 
     Click Button    ${reservation_passenger_next_button}
 
@@ -962,18 +966,18 @@ TC-M07-041
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_tangerang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_tangerang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
     User has filled in the Passenger form correctly
-    ...    ${passenger_title}
-    ...    ${passenger_name}
-    ...    ${passenger_nationality}
-    ...    ${passenger_email_valid}
-    ...    ${passenger_phone_number}
+    ...    ${prod_passenger_title}
+    ...    ${prod_passenger_name}
+    ...    ${prod_passenger_nationality}
+    ...    ${prod_passenger_email_valid}
+    ...    ${prod_passenger_phone_number}
 
     Click Button    ${reservation_orderextras_next_button}
 
@@ -984,24 +988,24 @@ TC-M07-042
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_tangerang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_tangerang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
     User has filled in the Passenger form correctly
-    ...    ${passenger_title}
-    ...    ${passenger_name}
-    ...    ${passenger_nationality}
-    ...    ${passenger_email_valid}
-    ...    ${passenger_phone_number}
+    ...    ${prod_passenger_title}
+    ...    ${prod_passenger_name}
+    ...    ${prod_passenger_nationality}
+    ...    ${prod_passenger_email_valid}
+    ...    ${prod_passenger_phone_number}
     ...    ${True}
     ...    ${True}
     ...    ${True}
 
     Click Element    ${reservation_orderextras_lounge_expand}
-    Select Lounge    ${lounge_data}
+    Select Lounge    ${prod_lounge_data}
     Input Text    ${reservation_orderextras_lounge_adult_input}    2
     Input Text    ${reservation_orderextras_lounge_child_input}    1
     Input Text    ${reservation_orderextras_lounge_infant_input}    1
@@ -1026,18 +1030,18 @@ TC-M07-043
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_tangerang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_tangerang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
     User has filled in the Passenger form correctly
-    ...    ${passenger_title}
-    ...    ${passenger_name}
-    ...    ${passenger_nationality}
-    ...    ${passenger_email_valid}
-    ...    ${passenger_phone_number}
+    ...    ${prod_passenger_title}
+    ...    ${prod_passenger_name}
+    ...    ${prod_passenger_nationality}
+    ...    ${prod_passenger_email_valid}
+    ...    ${prod_passenger_phone_number}
 
     Click Element    ${reservation_orderextras_lounge_expand}
     Input Text    ${reservation_orderextras_lounge_adult_input}    1
@@ -1051,22 +1055,22 @@ TC-M07-044
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_tangerang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_tangerang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
     User has filled in the Passenger form correctly
-    ...    ${passenger_title}
-    ...    ${passenger_name}
-    ...    ${passenger_nationality}
-    ...    ${passenger_email_valid}
-    ...    ${passenger_phone_number}
+    ...    ${prod_passenger_title}
+    ...    ${prod_passenger_name}
+    ...    ${prod_passenger_nationality}
+    ...    ${prod_passenger_email_valid}
+    ...    ${prod_passenger_phone_number}
 
     Click Element    ${reservation_orderextras_transportation_expand}
-    Select Region    ${region_data}
-    Select Car Type    ${car_type_data}
+    Select Region    ${prod_region_data}
+    Select Car Type    ${prod_car_type_data}
     Input Text    ${reservation_orderextras_transportation_total_unit_input}    1
 
     ${orderextras_transportation_total} =    Get "Transportation" total in "Order Extras" form
@@ -1082,22 +1086,20 @@ TC-M07-045
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_tangerang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_tangerang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
     User has filled in the Passenger form correctly
-    ...    ${passenger_title}
-    ...    ${passenger_name}
-    ...    ${passenger_nationality}
-    ...    ${passenger_email_valid}
-    ...    ${passenger_phone_number}
+    ...    ${prod_passenger_title}
+    ...    ${prod_passenger_name}
+    ...    ${prod_passenger_nationality}
+    ...    ${prod_passenger_email_valid}
+    ...    ${prod_passenger_phone_number}
 
     Click Element    ${reservation_orderextras_transportation_expand}
-    Select Car Type    ${car_type_data}
-    Input Text    ${reservation_orderextras_transportation_total_unit_input}    1
 
     Click Button    ${reservation_orderextras_next_button}
 
@@ -1108,21 +1110,21 @@ TC-M07-046
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_tangerang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_tangerang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
     User has filled in the Passenger form correctly
-    ...    ${passenger_title}
-    ...    ${passenger_name}
-    ...    ${passenger_nationality}
-    ...    ${passenger_email_valid}
-    ...    ${passenger_phone_number}
+    ...    ${prod_passenger_title}
+    ...    ${prod_passenger_name}
+    ...    ${prod_passenger_nationality}
+    ...    ${prod_passenger_email_valid}
+    ...    ${prod_passenger_phone_number}
 
     Click Element    ${reservation_orderextras_transportation_expand}
-    Select Region    ${region_data}
+    Select Region    ${prod_region_data}
     Input Text    ${reservation_orderextras_transportation_total_unit_input}    1
 
     Click Button    ${reservation_orderextras_next_button}
@@ -1134,22 +1136,22 @@ TC-M07-047
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_tangerang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_tangerang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
     User has filled in the Passenger form correctly
-    ...    ${passenger_title}
-    ...    ${passenger_name}
-    ...    ${passenger_nationality}
-    ...    ${passenger_email_valid}
-    ...    ${passenger_phone_number}
+    ...    ${prod_passenger_title}
+    ...    ${prod_passenger_name}
+    ...    ${prod_passenger_nationality}
+    ...    ${prod_passenger_email_valid}
+    ...    ${prod_passenger_phone_number}
 
     Click Element    ${reservation_orderextras_transportation_expand}
-    Select Region    ${region_data}
-    Select Car Type    ${car_type_data}
+    Select Region    ${prod_region_data}
+    Select Car Type    ${prod_car_type_data}
 
     Click Button    ${reservation_orderextras_next_button}
 
@@ -1160,24 +1162,24 @@ TC-M07-048
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_tangerang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_tangerang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
     User has filled in the Passenger form correctly
-    ...    ${passenger_title}
-    ...    ${passenger_name}
-    ...    ${passenger_nationality}
-    ...    ${passenger_email_valid}
-    ...    ${passenger_phone_number}
+    ...    ${prod_passenger_title}
+    ...    ${prod_passenger_name}
+    ...    ${prod_passenger_nationality}
+    ...    ${prod_passenger_email_valid}
+    ...    ${prod_passenger_phone_number}
     ...    ${True}
     ...    ${True}
     ...    ${True}
 
     Click Element    ${reservation_orderextras_lounge_expand}
-    Select Lounge    ${lounge_data}
+    Select Lounge    ${prod_lounge_data}
     Input Text    ${reservation_orderextras_lounge_adult_input}    4
     Input Text    ${reservation_orderextras_lounge_child_input}    1
     Input Text    ${reservation_orderextras_lounge_infant_input}    1
@@ -1191,24 +1193,24 @@ TC-M07-049
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_tangerang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_tangerang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
     User has filled in the Passenger form correctly
-    ...    ${passenger_title}
-    ...    ${passenger_name}
-    ...    ${passenger_nationality}
-    ...    ${passenger_email_valid}
-    ...    ${passenger_phone_number}
+    ...    ${prod_passenger_title}
+    ...    ${prod_passenger_name}
+    ...    ${prod_passenger_nationality}
+    ...    ${prod_passenger_email_valid}
+    ...    ${prod_passenger_phone_number}
     ...    ${True}
     ...    ${True}
     ...    ${True}
 
     Click Element    ${reservation_orderextras_lounge_expand}
-    Select Lounge    ${lounge_data}
+    Select Lounge    ${prod_lounge_data}
     Input Text    ${reservation_orderextras_lounge_adult_input}    2
     Input Text    ${reservation_orderextras_lounge_child_input}    2
     Input Text    ${reservation_orderextras_lounge_infant_input}    1
@@ -1222,24 +1224,24 @@ TC-M07-050
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
 
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_tangerang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_tangerang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
     User has filled in the Passenger form correctly
-    ...    ${passenger_title}
-    ...    ${passenger_name}
-    ...    ${passenger_nationality}
-    ...    ${passenger_email_valid}
-    ...    ${passenger_phone_number}
+    ...    ${prod_passenger_title}
+    ...    ${prod_passenger_name}
+    ...    ${prod_passenger_nationality}
+    ...    ${prod_passenger_email_valid}
+    ...    ${prod_passenger_phone_number}
     ...    ${True}
     ...    ${True}
     ...    ${True}
 
     Click Element    ${reservation_orderextras_lounge_expand}
-    Select Lounge    ${lounge_data}
+    Select Lounge    ${prod_lounge_data}
     Input Text    ${reservation_orderextras_lounge_adult_input}    2
     Input Text    ${reservation_orderextras_lounge_child_input}    1
     Input Text    ${reservation_orderextras_lounge_infant_input}    2
@@ -1252,29 +1254,83 @@ TC-M07-051
     [Documentation]    Verify the data in the "Flight" form, "Passenger" form, and "Order Extras" form matches in "Booking Resume", "Order Extras", and "Detail Price" fields in "Check Out" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
     User has filled in the Flight form correctly
-    ...    ${airport_surabaya}
-    ...    ${airport_tangerang}
-    ...    ${airline_valid}
-    ...    ${flight_number_valid}
-    ...    ${arrival_date_valid}
-    ...    ${est_arrival_time_valid}
+    ...    ${prod_airport_surabaya}
+    ...    ${prod_airport_tangerang}
+    ...    ${prod_airline_valid}
+    ...    ${prod_flight_number_valid}
+    ...    ${prod_arrival_date_valid}
+    ...    ${prod_est_arrival_time_valid}
     User has filled in the Passenger form correctly
-    ...    ${passenger_title}
-    ...    ${passenger_name}
-    ...    ${passenger_nationality}
-    ...    ${passenger_email_valid}
-    ...    ${passenger_phone_number}
+    ...    ${prod_passenger_title}
+    ...    ${prod_passenger_name}
+    ...    ${prod_passenger_nationality}
+    ...    ${prod_passenger_email_valid}
+    ...    ${prod_passenger_phone_number}
     ...    ${True}
     ...    ${True}
     ...    ${True}
     User has filled in the Order Extras form correctly
-    ...    ${lounge_data}
+    ...    ${prod_lounge_data}
     ...    2
     ...    1
     ...    1
-    ...    ${region_data}
-    ...    ${car_type_data}
+    ...    ${prod_region_data}
+    ...    ${prod_car_type_data}
     ...    1
+    Get "Booking Resume" data in "Check Out" form
+    Get "Order Extras" data in "Check Out" form
+    Get "Detail Price" data in "Check Out" form
+
+    Check Flight Data Equality
+
+    Should Be Equal    ${ORDER_EXTRAS_DATA}[lounge]    ${CHECKOUT_ORDER_EXTRAS_DATA}[lounge]
+    Should Be Equal
+    ...    ${ORDER_EXTRAS_DATA}[transportation_region]
+    ...    ${CHECKOUT_ORDER_EXTRAS_DATA}[transportation_region]
+    Should Be Equal
+    ...    ${ORDER_EXTRAS_DATA}[transportation_car_type]
+    ...    ${CHECKOUT_ORDER_EXTRAS_DATA}[transportation_car_type]
+    Should Be Equal
+    ...    ${ORDER_EXTRAS_DATA}[transportation_total_unit]
+    ...    ${CHECKOUT_ORDER_EXTRAS_DATA}[transportation_total_unit]
+
+    Should Be Equal    ${CHECKOUT_PRICE_SERVICE_DATA}[adult_number]    ${PASSENGER_DATA}[adult_pax]
+    Should Be Equal    ${CHECKOUT_PRICE_SERVICE_DATA}[child_number]    ${PASSENGER_DATA}[child_pax]
+    Should Be Equal    ${CHECKOUT_PRICE_SERVICE_DATA}[infant_number]    ${PASSENGER_DATA}[infant_pax]
+
+    Should Be Equal    ${CHECKOUT_LOUNGE_DATA}[adult_number]    ${ORDER_EXTRAS_DATA}[lounge_adult_number]
+    Should Be Equal    ${CHECKOUT_LOUNGE_DATA}[child_number]    ${ORDER_EXTRAS_DATA}[lounge_child_number]
+    Should Be Equal    ${CHECKOUT_LOUNGE_DATA}[infant_number]    ${ORDER_EXTRAS_DATA}[lounge_infant_number]
+
+    Should Be Equal    ${CHECKOUT_LOUNGE_DATA}[adult_price]    ${ORDER_EXTRAS_DATA}[lounge_adult_price]
+    Should Be Equal    ${CHECKOUT_LOUNGE_DATA}[child_price]    ${ORDER_EXTRAS_DATA}[lounge_child_price]
+    Should Be Equal    ${CHECKOUT_LOUNGE_DATA}[infant_price]    ${ORDER_EXTRAS_DATA}[lounge_infant_price]
+
+    Should Be Equal    ${CHECKOUT_TRANSPORTATION_DATA}[unit]    ${ORDER_EXTRAS_DATA}[transportation_total_unit]
+    Should Be Equal    ${CHECKOUT_TRANSPORTATION_DATA}[price]    ${ORDER_EXTRAS_DATA}[transportation_car_price]
+
+    ${price_service_adult} =    Evaluate
+    ...    ${CHECKOUT_PRICE_SERVICE_DATA}[adult_number] * ${CHECKOUT_PRICE_SERVICE_DATA}[adult_price]
+    ${price_service_child} =    Evaluate
+    ...    ${CHECKOUT_PRICE_SERVICE_DATA}[child_number] * ${CHECKOUT_PRICE_SERVICE_DATA}[child_price]
+    ${price_service_infant} =    Evaluate
+    ...    ${CHECKOUT_PRICE_SERVICE_DATA}[infant_number] * ${CHECKOUT_PRICE_SERVICE_DATA}[infant_price]
+    ${price_service_total} =    Evaluate    ${price_service_adult} + ${price_service_child} + ${price_service_infant}
+    Should Be Equal As Strings    ${price_service_total}    ${CHECKOUT_PRICE_SERVICE_TOTAL}
+
+    ${lounge_adult} =    Evaluate
+    ...    ${ORDER_EXTRAS_DATA}[lounge_adult_number] * ${ORDER_EXTRAS_DATA}[lounge_adult_price]
+    ${lounge_child} =    Evaluate
+    ...    ${ORDER_EXTRAS_DATA}[lounge_child_number] * ${ORDER_EXTRAS_DATA}[lounge_child_price]
+    ${lounge_infant} =    Evaluate
+    ...    ${ORDER_EXTRAS_DATA}[lounge_infant_number] * ${ORDER_EXTRAS_DATA}[lounge_infant_price]
+    ${lounge_total} =    Evaluate    ${lounge_adult} + ${lounge_child} + ${lounge_infant}
+    Should Be Equal As Strings    ${lounge_total}    ${CHECKOUT_LOUNGE_DATA}[lounge_total]
+
+    ${grand_total} =    Evaluate
+    ...    ${CHECKOUT_PRICE_SERVICE_TOTAL} + ${CHECKOUT_LOUNGE_DATA}[lounge_total] + ${CHECKOUT_TRANSPORTATION_DATA}[total]
+    Should Be Equal As Strings    ${grand_total}    ${CHECKOUT_GRAND_TOTAL}
+    Log    ok!
 
 
 *** Keywords ***
@@ -1282,8 +1338,8 @@ Show Alerts
     [Arguments]    ${error_message}    ${arrival_date_less}=${False}
 
     IF    ${arrival_date_less}
-        ${current_date} =    Get Current Date    result_format=datetime
-        ${today} =    Convert Date    ${current_date}    result_format=%d/%m/%Y
+        ${prod_current_date} =    Get Current Date    result_format=datetime
+        ${today} =    Convert Date    ${prod_current_date}    result_format=%d/%m/%Y
         Wait Until Page Contains    ${error_message} ${today}!
         Page Should Contain    ${error_message} ${today}!
     ELSE
@@ -1297,39 +1353,15 @@ Show Alerts
     ...    ${orderextras_adult_total}
     ...    ${orderextras_child_total}
     ...    ${orderextras_infant_total}
-    ...    ${language}=${LANGUAGE_DEFAULT}
-    ${checkout_lounge} =    Get Text    ${reservation_checkout_en_lounge_value}
+    ...    ${LANGUAGE_DEFAULT}=${LANGUAGE_DEFAULT}
+
     ${checkout_lounge_total} =    Get Text    ${reservation_checkout_en_detail_price_lounge_total}
-    Click Element    ${reservation_checkout_en_detail_price_lounge_expand}
-
-    IF    "${language}" == "${LANGUAGE_EN}"
-        ${checkout_adult} =    Get Text    ${reservation_checkout_en_detail_price_lounge_adult_number}
-        ${checkout_child} =    Get Text    ${reservation_checkout_en_detail_price_lounge_child_number}
-        ${checkout_infant} =    Get Text    ${reservation_checkout_en_detail_price_lounge_infant_number}
-        ${checkout_adult_price} =    Get Text    ${reservation_checkout_en_detail_price_lounge_adult_price}
-        ${checkout_child_price} =    Get Text    ${reservation_checkout_en_detail_price_lounge_child_price}
-        ${checkout_infant_price} =    Get Text    ${reservation_checkout_en_detail_price_lounge_infant_price}
-    ELSE
-        ${checkout_adult} =    Get Text    ${reservation_checkout_id_detail_price_lounge_adult_number}
-        ${checkout_child} =    Get Text    ${reservation_checkout_id_detail_price_lounge_child_number}
-        ${checkout_infant} =    Get Text    ${reservation_checkout_id_detail_price_lounge_infant_number}
-        ${checkout_adult_price} =    Get Text    ${reservation_checkout_id_detail_price_lounge_adult_price}
-        ${checkout_child_price} =    Get Text    ${reservation_checkout_id_detail_price_lounge_child_price}
-        ${checkout_infant_price} =    Get Text    ${reservation_checkout_id_detail_price_lounge_infant_price}
-    END
-
-    ${checkout_adult_number} =    Remove String Using Regexp    ${checkout_adult}    x.*
-    ${checkout_child_number} =    Remove String Using Regexp    ${checkout_child}    x.*
-    ${checkout_infant_number} =    Remove String Using Regexp    ${checkout_infant}    x.*
-
-    ${checkout_adult_price} =    Remove String    ${checkout_adult_price}    x Rp    .    ${SPACE}
-    ${checkout_child_price} =    Remove String    ${checkout_child_price}    x Rp    .    ${SPACE}
-    ${checkout_infant_price} =    Remove String    ${checkout_infant_price}    x Rp    .    ${SPACE}
-
     ${checkout_lounge_total} =    Remove String    ${checkout_lounge_total}    .    Rp    ${SPACE}
-    ${checkout_adult_total} =    Evaluate    ${checkout_adult_number} * ${checkout_adult_price}
-    ${checkout_child_total} =    Evaluate    ${checkout_child_number} * ${checkout_child_price}
-    ${checkout_infant_total} =    Evaluate    ${checkout_infant_number} * ${checkout_infant_price}
+
+    Click Element    ${reservation_checkout_en_detail_price_lounge_expand}
+    ${checkout_adult_total}
+    ...    ${checkout_child_total}
+    ...    ${checkout_infant_total} =    Get "Lounge" details in "Detail Price"    ${LANGUAGE_DEFAULT}
 
     Should Be Equal    ${orderextras_lounge_total}    ${checkout_lounge_total}
     Should Be Equal    ${orderextras_adult_total}    ${checkout_adult_total}
@@ -1337,20 +1369,18 @@ Show Alerts
     Should Be Equal    ${orderextras_infant_total}    ${checkout_infant_total}
 
 "Transportation" total in "Order Extras" form should be equal total in "Check Out" form
-    [Arguments]    ${orderextras_transportation_total}    ${language}=${LANGUAGE_DEFAULT}
+    [Arguments]    ${orderextras_transportation_total}    ${LANGUAGE_DEFAULT}=${LANGUAGE_DEFAULT}
 
-    IF    "${language}" == "${LANGUAGE_EN}"
-        ${checkout_transportation} =    Get Text    ${reservation_checkout_en_detail_price_transportation_total}
-    ELSE
-        ${checkout_transportation} =    Get Text    ${reservation_checkout_id_detail_price_transportation_total}
-    END
-
-    ${checkout_transportation} =    Split String    ${checkout_transportation}    ${SPACE}unit x${SPACE}
-    ${checkout_transportation_unit} =    Set Variable    ${checkout_transportation}[0]
-    ${checkout_transportation_price} =    Set Variable    ${checkout_transportation}[1]
-    ${checkout_transportation_price} =    Remove String    ${checkout_transportation_price}    Rp    .
-
-    ${checkout_transportation_total} =    Evaluate
-    ...    ${checkout_transportation_unit} * ${checkout_transportation_price}
+    ${checkout_transportation_unit}
+    ...    ${checkout_transportation_price}
+    ...    ${checkout_transportation_total} =
+    ...    Get "Transportation" details in "Detail Price"
+    ...    ${LANGUAGE_DEFAULT}
 
     Should Be Equal    ${orderextras_transportation_total}    ${checkout_transportation_total}
+
+Check Flight Data Equality
+    ${flight_data_keys} =    Get Dictionary Keys    ${FLIGHT_DATA}
+    FOR    ${key}    IN    @{flight_data_keys}
+        Should Be Equal    ${FLIGHT_DATA}[${key}]    ${BOOKING_RESUME_DATA}[${key}]
+    END

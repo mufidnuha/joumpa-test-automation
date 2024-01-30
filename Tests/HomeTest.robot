@@ -25,21 +25,21 @@ Verify navigation to "Home" page when access joumpa.com
     [Documentation]    TC-PUB-001
     [Tags]    ts-pub-001    urd-pub-001    home    web public
     Common.Load    ${START_URL}    ${EMPTY}
-    HomePage.Display Correctly    ${LANGUAGE}
+    HomePage.Display Correctly    ${LANGUAGE_DEFAULT}
 
 Verify navigation to "Home" page from Joumpa logo in header
     [Documentation]    TC-PUB-002
     [Tags]    ts-pub-001    urd-pub-001    home    web public
     User located in "Home" page
     Click Element    ${HEADER_JOUMPA_LOGO}
-    HomePage.Display Correctly    ${LANGUAGE}
+    HomePage.Display Correctly    ${LANGUAGE_DEFAULT}
 
 Verify navigation to "Home" page from "Home" menu in header
     [Documentation]    TC-PUB-003
     [Tags]    ts-pub-001    urd-pub-001    home    web public
     User located in "Home" page
     Click Element    ${HEADER_HOME}
-    HomePage.Display Correctly    ${LANGUAGE}
+    HomePage.Display Correctly    ${LANGUAGE_DEFAULT}
 
 Verify navigation to "Home" page from "About Joumpa" in footer
     [Documentation]    TC-PUB-004
@@ -47,7 +47,7 @@ Verify navigation to "Home" page from "About Joumpa" in footer
     User located in "Home" page
     Scroll Element Into View    ${FOOTER_ABOUT_JOUMPA}
     Click Element    ${FOOTER_ABOUT_JOUMPA}
-    HomePage.Display Correctly    ${LANGUAGE}
+    HomePage.Display Correctly    ${LANGUAGE_DEFAULT}
 
 Verify 7 points of "Why Joumpa" section in Home page
     [Documentation]    TC-PUB-005
@@ -67,7 +67,7 @@ Verify navigation to "Terms and Condition" page from footer
     User located in "Home" page
     Scroll Element Into View    ${FOOTER_TERMS_AND_CONDITION}
     Click Element    ${FOOTER_TERMS_AND_CONDITION}
-    TermsAndConditionPage.Display Correctly    ${LANGUAGE}
+    TermsAndConditionPage.Display Correctly    ${LANGUAGE_DEFAULT}
 
 Verify navigation to "Privacy Policy" page from footer
     [Documentation]    TC-PUB-008
@@ -75,7 +75,7 @@ Verify navigation to "Privacy Policy" page from footer
     User located in "Home" page
     Scroll Element Into View    ${FOOTER_PRIVACY_POLICY}
     Click Element    ${FOOTER_PRIVACY_POLICY}
-    PrivacyPolicyPage.Display Correctly    ${LANGUAGE}
+    PrivacyPolicyPage.Display Correctly    ${LANGUAGE_DEFAULT}
 
 Verify navigation to https://gapura.id/about-us-uk from "About Gapura" in footer
     [Documentation]    TC-PUB-009

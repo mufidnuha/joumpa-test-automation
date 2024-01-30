@@ -1,5 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
+Library     Collections
 Resource    ../Header.robot
 Resource    ../Footer.robot
 Resource    ../Common.robot
@@ -91,40 +92,49 @@ ${reservation_flight_arrival_info_date_input}                   //input[@name="d
 ${reservation_flight_arrival_info_time_input}                   //input[@name="time_transfer_to"]
 
 ${reservation_flight_products}                                  //div[@style="float: right;"]//preceding-sibling::div[1]//span[@class="card-header-inactive"]
+${reservation_flight_product_selected}                          //div[@style="float: right;"]//preceding-sibling::div[1]//span[@class="card-header"]/div
 
 ${reservation_flight_next_button}                               //div[@style="float: right;"]//button[2]
 ${reservation_flight_cancel_button}                             //div[@style="float: right;"]//button[1]
 
 ${airport}                                                      ""
-${selected_airport} =                                           /div[contains(text(), ${airport})]
+${selected_airport}                                             /div[contains(text(), ${airport})]
 
 ${airline}                                                      ""
-${selected_airline} =                                           /div[contains(text(), ${airport})]
+${selected_airline}                                             /div[contains(text(), ${airport})]
 
 ${reservation_flight_checkmark_flight}                          //div[@class="side-menu-no-border"]/div[2]//span
 ${reservation_flight_checkmark_passenger}                       //div[@class="side-menu-no-border"]/div[3]//span
 ${reservation_flight_checkmark_orderextras}                     //div[@class="side-menu-no-border"]/div[4]//span
 ${reservation_flight_checkmark_checkout}                        //div[@class="side-menu-no-border"]/div[5]//span
-${checkmark_green}                                              rgb(99, 174, 92)
+
+&{FLIGHT_DATA}
+...                                                             flight_type=${EMPTY}
+...                                                             origin=${EMPTY}
+...                                                             destination=${EMPTY}
+...                                                             arrival_airline=${EMPTY}
+...                                                             arrival_flight_number=${EMPTY}
+...                                                             arrival_date=${EMPTY}
+...                                                             arrival_time=${EMPTY}
 
 
 *** Keywords ***
 Page Should Contain Reservation title
-    [Arguments]    ${language}
-    IF    "${language}" == "${LANGUAGE_EN}"
+    [Arguments]    ${LANGUAGE_DEFAULT}
+    IF    "${LANGUAGE_DEFAULT}" == "${LANGUAGE_EN}"
         Page Should Contain    ${header_en_reservation_title}
     ELSE
         Page Should Contain    ${header_id_reservation_title}
     END
 
 Page Should Contain Header Reservation
-    [Arguments]    ${language}
+    [Arguments]    ${LANGUAGE_DEFAULT}
     Page Should Contain Image    ${header_joumpa_logo}
-    Page Should Contain Reservation title    ${language}
+    Page Should Contain Reservation title    ${LANGUAGE_DEFAULT}
 
 Page Should Contain Process Reservation
-    [Arguments]    ${language}
-    IF    "${language}" == "${LANGUAGE_EN}"
+    [Arguments]    ${LANGUAGE_DEFAULT}
+    IF    "${LANGUAGE_DEFAULT}" == "${LANGUAGE_EN}"
         Page Should Contain    ${reservation_flight_en_new_reservation_title}
         Page Should Contain    ${reservation_flight_en_process_reservation_list}[0]
         Page Should Contain    ${reservation_flight_en_process_reservation_list}[1]
@@ -139,9 +149,9 @@ Page Should Contain Process Reservation
     END
 
 Page Should Contain Flight Type Field
-    [Arguments]    ${language}
+    [Arguments]    ${LANGUAGE_DEFAULT}
 
-    IF    "${language}" == "${LANGUAGE_EN}"
+    IF    "${LANGUAGE_DEFAULT}" == "${LANGUAGE_EN}"
         Page Should Contain    ${reservation_flight_en_flight_type_title}
         Page Should Contain    ${reservation_flight_en_flight_type_list}[0]
         Page Should Contain    ${reservation_flight_en_flight_type_list}[1]
@@ -158,9 +168,9 @@ Page Should Contain Flight Type Field
     Page Should Contain Element    ${reservation_flight_transfer_button}
 
 Page Should Contain Flight Information Field
-    [Arguments]    ${language}    ${flight_type}
+    [Arguments]    ${LANGUAGE_DEFAULT}    ${flight_type}
 
-    IF    "${language}" == "${LANGUAGE_EN}"
+    IF    "${LANGUAGE_DEFAULT}" == "${LANGUAGE_EN}"
         Page Should Contain    ${reservation_flight_en_flight_info_title}
 
         IF    "${flight_type}" == "${FLIGHT_TYPE_ARRIVAL}" or "${flight_type}" == "${FLIGHT_TYPE_DEPARTURE}"
@@ -242,8 +252,8 @@ Page Should Contain Flight Information Field
     END
 
 Page Should Contain Product Field
-    [Arguments]    ${language}    ${flight_type}    ${mag_type}
-    IF    "${language}" == "${LANGUAGE_EN}"
+    [Arguments]    ${LANGUAGE_DEFAULT}    ${flight_type}    ${mag_type}
+    IF    "${LANGUAGE_DEFAULT}" == "${LANGUAGE_EN}"
         Page Should Contain    ${reservation_flight_en_product_title}
 
         IF    "${flight_type}" == "${FLIGHT_TYPE_TRANSFER}"
@@ -266,39 +276,45 @@ Page Should Contain Product Field
     END
 
 The "Reservation" page display correctly
-    [Arguments]    ${language}    ${flight_type}    ${mag_type}=${empty}
+    [Arguments]    ${LANGUAGE_DEFAULT}    ${flight_type}    ${mag_type}=${empty}
 
-    Page Should Contain Header Reservation    ${language}
-    Page Should Contain Process Reservation    ${language}
+    Page Should Contain Header Reservation    ${LANGUAGE_DEFAULT}
+    Page Should Contain Process Reservation    ${LANGUAGE_DEFAULT}
 
-    Page Should Contain Flight Type Field    ${language}
-    Page Should Contain Flight Information Field    ${language}    ${flight_type}
-    Page Should Contain Product Field    ${language}    ${flight_type}    ${mag_type}
+    Page Should Contain Flight Type Field    ${LANGUAGE_DEFAULT}
+    Page Should Contain Flight Information Field    ${LANGUAGE_DEFAULT}    ${flight_type}
+    Page Should Contain Product Field    ${LANGUAGE_DEFAULT}    ${flight_type}    ${mag_type}
 
     Page Should Contain Button    ${reservation_flight_cancel_button}
     Page Should Contain Button    ${reservation_flight_next_button}
 
-    Page Should Contain Support Footer    ${language}
-    Page Should Contain Main Footer    ${language}
+    Page Should Contain Support Footer    ${LANGUAGE_DEFAULT}
+    Page Should Contain Main Footer    ${LANGUAGE_DEFAULT}
 
 User located in "Reservation" Page
     Common.Navigate To Location    ${start_url}    ${path_reservation}
     Wait Until Page Contains    ${reservation_flight_en_new_reservation_title}
 
 The "Arrival" is selected as "Flight Type"
-    ${style} =    SeleniumLibrary.Get Element Attribute    ${reservation_flight_arrival_button}    style
+    ${style} =    SeleniumLibrary.Get Element Attribute
+    ...    ${reservation_flight_arrival_button}
+    ...    style
     ${color} =    evaluate    re.search("background: *(.*?);", '''${style}''').group(1)
-    Should Be Equal    ${color}    ${color_is_selected}
+    Should Be Equal    ${color}    ${BACKGROUND_IS_SELECTED_COLOR}
 
 Departure is selected as Flight Type
-    ${style} =    SeleniumLibrary.Get Element Attribute    ${reservation_flight_departure_button}    style
+    ${style} =    SeleniumLibrary.Get Element Attribute
+    ...    ${reservation_flight_departure_button}
+    ...    style
     ${color} =    evaluate    re.search("background: *(.*?);", '''${style}''').group(1)
-    Should Be Equal    ${color}    ${color_is_selected}
+    Should Be Equal    ${color}    ${BACKGROUND_IS_SELECTED_COLOR}
 
 Transfer is selected as Flight Type
-    ${style} =    SeleniumLibrary.Get Element Attribute    ${reservation_flight_transfer_button}    style
+    ${style} =    SeleniumLibrary.Get Element Attribute
+    ...    ${reservation_flight_transfer_button}
+    ...    style
     ${color} =    evaluate    re.search("background: *(.*?);", '''${style}''').group(1)
-    Should Be Equal    ${color}    ${color_is_selected}
+    Should Be Equal    ${color}    ${BACKGROUND_IS_SELECTED_COLOR}
 
 The "Origin" field is filled with
     [Arguments]    ${airport}
@@ -395,39 +411,81 @@ User has filled in the Flight form correctly
     Input Text    ${reservation_flight_flight_info_time_input}    ${est_arrival_time}
 
     Click Element    ${reservation_flight_products}
+
+    Get data from "Flight" form
+
     Click Button    ${reservation_flight_next_button}
     ReservationPassengerPage.The "Passenger" form display correctly    ${LANGUAGE_DEFAULT}
 
 Checkmark in Flight Section is Green
     ${style} =    SeleniumLibrary.Get Element Attribute    ${reservation_flight_checkmark_flight}    style
     ${color} =    evaluate    re.search("background-color: *(.*?);", '''${style}''').group(1)
-    Should Be Equal    ${color}    ${checkmark_green}
+    Should Be Equal    ${color}    ${CHECKMARK_IS_SELECTED_COLOR}
 
 Checkmark in Passenger Section is Green
     ${style} =    SeleniumLibrary.Get Element Attribute    ${reservation_flight_checkmark_passenger}    style
     ${color} =    evaluate    re.search("background-color: *(.*?);", '''${style}''').group(1)
-    Should Be Equal    ${color}    ${checkmark_green}
+    Should Be Equal    ${color}    ${CHECKMARK_IS_SELECTED_COLOR}
 
 Checkmark in Order Extras Section is Green
     ${style} =    SeleniumLibrary.Get Element Attribute    ${reservation_flight_checkmark_orderextras}    style
     ${color} =    evaluate    re.search("background-color: *(.*?);", '''${style}''').group(1)
-    Should Be Equal    ${color}    ${checkmark_green}
+    Should Be Equal    ${color}    ${CHECKMARK_IS_SELECTED_COLOR}
 
 Show "Not Available" in "Products" field
-    [Arguments]    ${language}
-    IF    "${language}" == "${LANGUAGE_EN}"
+    [Arguments]    ${LANGUAGE_DEFAULT}
+    IF    "${LANGUAGE_DEFAULT}" == "${LANGUAGE_EN}"
         Page Should Contain    ${reservation_flight_en_product_not_available_label}
     ELSE
         Page Should Contain    ${reservation_flight_id_product_not_available_label}
     END
 
-Get "Flight" data
+Get "Flight Type"
+    ${arrival_style} =    SeleniumLibrary.Get Element Attribute
+    ...    ${reservation_flight_arrival_button}
+    ...    style
+    ${arrival_color} =    evaluate    re.search("color: *(.*?);", '''${arrival_style}''').group(1)
+    ${departure_style} =    SeleniumLibrary.Get Element Attribute
+    ...    ${reservation_flight_departure_button}
+    ...    style
+    ${departure_color} =    evaluate    re.search("color: *(.*?);", '''${departure_style}''').group(1)
+    ${transfer_style} =    SeleniumLibrary.Get Element Attribute
+    ...    ${reservation_flight_transfer_button}
+    ...    style
+    ${transfer_color} =    evaluate    re.search("color: *(.*?);", '''${transfer_style}''').group(1)
+
+    IF    "${arrival_color}" == "${BUTTON_IS_SELECTED_COLOR}"
+        ${flight_type} =    Set Variable    ${FLIGHT_TYPE_ARRIVAL}
+    ELSE IF    "${departure_color}" == "${BUTTON_IS_SELECTED_COLOR}"
+        ${flight_type} =    Set Variable    ${FLIGHT_TYPE_DEPARTURE}
+    ELSE
+        ${flight_type} =    Set Variable    ${FLIGHT_TYPE_TRANSFER}
+    END
+
+    RETURN    ${flight_type}
+
+Get data from "Flight" form
+    ${flight_type} =    Get "Flight Type"
     ${origin} =    Get Text    ${reservation_flight_origin_text_field}
     ${destination} =    Get Text    ${reservation_flight_destination_text_field}
     ${arrival_airline} =    Get Text    ${reservation_flight_flight_info_airline_text_field}
+    ${arrival_airline} =    Remove String Using Regexp    ${arrival_airline}    ^[A-Z]+${SPACE}-${SPACE}
     ${arrival_airline_code} =    Get Text    ${reservation_flight_flight_info_airline_code}
-    ${arrival_flight_number} =    Get Element Attribute
+    ${arrival_flight_number} =    SeleniumLibrary.Get Element Attribute
     ...    ${reservation_flight_flight_info_flight_number_input}
     ...    value
-    ${arrival_date} =    Get Element Attribute    ${reservation_flight_flight_info_date_input}    value
-    ${arrival_time} =    Get Element Attribute    ${reservation_flight_flight_info_time_input}    value
+    ${arrival_flight_number} =    Set Variable    ${arrival_airline_code}${arrival_flight_number}
+    ${arrival_date} =    SeleniumLibrary.Get Element Attribute    ${reservation_flight_flight_info_date_input}    value
+    ${arrival_date} =    Convert Date    ${arrival_date}    result_format=%d/%m/%Y
+    ${arrival_time} =    SeleniumLibrary.Get Element Attribute    ${reservation_flight_flight_info_time_input}    value
+
+    Set To Dictionary    ${FLIGHT_DATA}
+    ...    flight_type=${flight_type}
+    ...    origin=${origin}
+    ...    destination=${destination}
+    ...    arrival_airline=${arrival_airline}
+    ...    arrival_flight_number=${arrival_flight_number}
+    ...    arrival_date=${arrival_date}
+    ...    arrival_time=${arrival_time}
+    ${FLIGHT_DATA} =    Convert Dictionary Values To Lowercase    &{FLIGHT_DATA}
+    Set Suite Variable    ${FLIGHT_DATA}

@@ -33,10 +33,10 @@ Page Should Contain Contact Us In Indonesian
     Page Should Contain    ${CONTACTUS_ID_CONTACT_LABEL}
 
 Display Correctly
-    [Arguments]    ${LANGUAGE}
-    Page Should Contain Header    ${LANGUAGE}
+    [Arguments]    ${LANGUAGE_DEFAULT}
+    Page Should Contain Header    ${LANGUAGE_DEFAULT}
 
-    IF    "${LANGUAGE}" == "${HEADER_EN_LANGUAGE_LABEL}"
+    IF    "${LANGUAGE_DEFAULT}" == "${HEADER_EN_LANGUAGE_LABEL}"
         Page Should Contain Contact Us In English
     ELSE
         Page Should Contain Contact Us In Indonesian
@@ -48,5 +48,5 @@ Display Correctly
     Page Should Contain    ${CONTACTUS_FAX_VALUE}
     Page Should Contain    ${CONTACTUS_EMAIL_VALUE}
 
-    Page Should Contain Reservation Footer    ${LANGUAGE}
-    Page Should Contain Main Footer    ${LANGUAGE}
+    Page Should Contain Reservation Footer    ${LANGUAGE_DEFAULT}
+    Page Should Contain Main Footer    ${LANGUAGE_DEFAULT}

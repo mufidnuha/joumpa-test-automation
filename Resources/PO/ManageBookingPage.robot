@@ -34,8 +34,8 @@ Page should Contain Booking In Indonesian
     Page Should Contain    ${MANAGE_ID_BOOKING_BOOKING_EMAIL_LABEL}
 
 Page should contain Booking Field
-    [Arguments]    ${LANGUAGE}
-    IF    "${LANGUAGE}" == "${HEADER_EN_LANGUAGE_LABEL}"
+    [Arguments]    ${LANGUAGE_DEFAULT}
+    IF    "${LANGUAGE_DEFAULT}" == "${HEADER_EN_LANGUAGE_LABEL}"
         Page Should Contain Booking In English
     ELSE
         Page Should Contain Booking In Indonesian
@@ -45,8 +45,8 @@ Page should contain Booking Field
     Page Should Contain Button    ${MANAGE_BOOKING_BOOKING_BUTTON}
 
 Display Correctly
-    [Arguments]    ${LANGUAGE}
-    Page Should Contain Header    ${LANGUAGE}
-    Page should contain Booking Field    ${LANGUAGE}
-    Page Should Contain Reservation Footer    ${LANGUAGE}
-    Page Should Contain Main Footer    ${LANGUAGE}
+    [Arguments]    ${LANGUAGE_DEFAULT}
+    Page Should Contain Header    ${LANGUAGE_DEFAULT}
+    Page should contain Booking Field    ${LANGUAGE_DEFAULT}
+    Page Should Contain Reservation Footer    ${LANGUAGE_DEFAULT}
+    Page Should Contain Main Footer    ${LANGUAGE_DEFAULT}

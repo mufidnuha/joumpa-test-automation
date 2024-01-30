@@ -52,7 +52,7 @@ Page Should Contain In Indonesian
     Page Should Contain    ${header_id_language_label}
 
 Page Should Contain Header
-    [Arguments]    ${LANGUAGE}
+    [Arguments]    ${LANGUAGE_DEFAULT}
 
     Page Should Contain Image    ${header_joumpa_logo}
     Page Should Contain Element    ${header_home}
@@ -63,7 +63,7 @@ Page Should Contain Header
     Page Should Contain Element    ${header_language_flag}
     Page Should Contain Button    ${header_login_button}
 
-    IF    "${LANGUAGE}" == "${header_en_language_label}"
+    IF    "${LANGUAGE_DEFAULT}" == "${header_en_language_label}"
         Page Should Contain In English
     ELSE
         Page Should Contain In Indonesian

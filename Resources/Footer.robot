@@ -121,7 +121,7 @@ Page Should Contain Reservation Footer In Indonesian
     Page Should Contain    ${FOOTER_ID_RESERVATION_BUTTON_LABEL}
 
 Page Should Contain Main Footer
-    [Arguments]    ${LANGUAGE}
+    [Arguments]    ${LANGUAGE_DEFAULT}
     Page Should Contain Image    ${FOOTER_JOUMPA_LOGO}
     Page Should Contain Image    ${FOOTER_GAPURA_LOGO}
     Page Should Contain Element    ${FOOTER_TERMS_AND_CONDITION}
@@ -135,17 +135,17 @@ Page Should Contain Main Footer
     Page Should Contain Image    ${FOOTER_DOWNLOAD_APP_STORE_LOGO}
     Page Should Contain Image    ${FOOTER_DOWNLOAD_APP_STORE_QR}
 
-    IF    "${LANGUAGE}" == "${HEADER_EN_LANGUAGE_LABEL}"
+    IF    "${LANGUAGE_DEFAULT}" == "${HEADER_EN_LANGUAGE_LABEL}"
         Page Should Contain Main Footer In English
     ELSE
         Page Should Contain Main Footer In Indonesian
     END
 
 Page Should Contain Reservation Footer
-    [Arguments]    ${LANGUAGE}
+    [Arguments]    ${LANGUAGE_DEFAULT}
     Page Should Contain Button    ${FOOTER_RESERVATION_BUTTON}
 
-    IF    "${LANGUAGE}" == "${HEADER_EN_LANGUAGE_LABEL}"
+    IF    "${LANGUAGE_DEFAULT}" == "${HEADER_EN_LANGUAGE_LABEL}"
         Page Should Contain Reservation Footer In English
     ELSE
         Page Should Contain Reservation Footer In Indonesian
@@ -154,8 +154,8 @@ Page Should Contain Reservation Footer
 # TODO: pindah ke footer dan direname keywordnya
 
 Page Should Contain Support Footer
-    [Arguments]    ${LANGUAGE}
-    IF    "${LANGUAGE}" == "${HEADER_EN_LANGUAGE_LABEL}"
+    [Arguments]    ${LANGUAGE_DEFAULT}
+    IF    "${LANGUAGE_DEFAULT}" == "${HEADER_EN_LANGUAGE_LABEL}"
         Page Should Contain    ${FOOTER_EN_SUPPORT_MAIN_HEADER}
         Page Should Contain    ${FOOTER_EN_SUPPORT_MAIN_HEADER_2}
         Page Should Contain    ${FOOTER_EN_SUPPORT_BUTTON_LABEL}

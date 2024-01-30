@@ -78,10 +78,10 @@ ${TAC_EN_MAIN_HEADER_2} =               Let’s Dive into Our Conditions
 
 *** Keywords ***
 Display Correctly
-    [Arguments]    ${LANGUAGE}
-    Page Should Contain Header    ${LANGUAGE}
+    [Arguments]    ${LANGUAGE_DEFAULT}
+    Page Should Contain Header    ${LANGUAGE_DEFAULT}
 
-    IF    "${LANGUAGE}" == "${HEADER_EN_LANGUAGE_LABEL}"
+    IF    "${LANGUAGE_DEFAULT}" == "${HEADER_EN_LANGUAGE_LABEL}"
         Page Should Contain    ${TAC_EN_MAIN_HEADER}
         Page Should Contain    ${TAC_EN_MAIN_HEADER_2}
 
@@ -113,5 +113,5 @@ Display Correctly
         END
     END
 
-    Page Should Contain Reservation Footer    ${LANGUAGE}
-    Page Should Contain Main Footer    ${LANGUAGE}
+    Page Should Contain Reservation Footer    ${LANGUAGE_DEFAULT}
+    Page Should Contain Main Footer    ${LANGUAGE_DEFAULT}

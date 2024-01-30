@@ -43,11 +43,11 @@ Page Should Contain Login In Indonesian
     Page Should Contain    ${LOGIN_ID_FORGET_PASSWORD_LABEL}
 
 Display Correctly
-    [Arguments]    ${LANGUAGE}
+    [Arguments]    ${LANGUAGE_DEFAULT}
     Page Should Contain Image    ${LOGIN_JOUMPA_LOGO}
     Page Should Contain    ${LOGIN_MAIN_HEADER}
 
-    IF    "${LANGUAGE}" == "${HEADER_EN_LANGUAGE_LABEL}"
+    IF    "${LANGUAGE_DEFAULT}" == "${HEADER_EN_LANGUAGE_LABEL}"
         Page Should Contain Login In English
     ELSE
         Page Should Contain Login In Indonesian

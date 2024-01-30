@@ -36,11 +36,11 @@ Page Should Contain Meet And Greet Services In Indonesian
     Page Should Contain    ${PRODUCTS_ID_SERVICES_DESCRIPTION}[0]
 
 Page Should Contain Meet And Greet Services
-    [Arguments]    ${LANGUAGE}
+    [Arguments]    ${LANGUAGE_DEFAULT}
     Page Should Contain Button    ${PRODUCTS_MEET_AND_GREET_READ_MORE_BUTTON}
     Page Should Contain Image    ${PRODUCTS_MEET_AND_GREET_IMAGE}
 
-    IF    "${LANGUAGE}" == "${HEADER_EN_LANGUAGE_LABEL}"
+    IF    "${LANGUAGE_DEFAULT}" == "${HEADER_EN_LANGUAGE_LABEL}"
         Page Should Contain Meet And Greet Services In English
     ELSE
         Page Should Contain Meet And Greet Services In Indonesian
@@ -55,32 +55,32 @@ Page Should Contain Transfer Services In Indonesian
     Page Should Contain    ${PRODUCTS_ID_SERVICES_DESCRIPTION}[1]
 
 Page Should Contain Transfer Services
-    [Arguments]    ${LANGUAGE}
+    [Arguments]    ${LANGUAGE_DEFAULT}
     Page Should Contain Button    ${PRODUCTS_TRANSFER_READ_MORE_BUTTON}
     Page Should Contain Image    ${PRODUCTS_TRANSFER_IMAGE}
 
-    IF    "${LANGUAGE}" == "${HEADER_EN_LANGUAGE_LABEL}"
+    IF    "${LANGUAGE_DEFAULT}" == "${HEADER_EN_LANGUAGE_LABEL}"
         Page Should Contain Meet And Greet Services In English
     ELSE
         Page Should Contain Meet And Greet Services In Indonesian
     END
 
 Display Correctly
-    [Arguments]    ${LANGUAGE}
-    Page Should Contain Header    ${LANGUAGE}
+    [Arguments]    ${LANGUAGE_DEFAULT}
+    Page Should Contain Header    ${LANGUAGE_DEFAULT}
 
-    IF    "${LANGUAGE}" == "${HEADER_EN_LANGUAGE_LABEL}"
+    IF    "${LANGUAGE_DEFAULT}" == "${HEADER_EN_LANGUAGE_LABEL}"
         Page Should Contain    ${PRODUCTS_EN_MAIN_HEADER}
         Page Should Contain    ${PRODUCTS_EN_MAIN_HEADER_2}
     ELSE
         Page Should Contain    ${PRODUCTS_ID_MAIN_HEADER}
         Page Should Contain    ${PRODUCTS_ID_MAIN_HEADER_2}
     END
-    Page Should Contain Meet And Greet Services    ${LANGUAGE}
-    Page Should Contain Transfer Services    ${LANGUAGE}
+    Page Should Contain Meet And Greet Services    ${LANGUAGE_DEFAULT}
+    Page Should Contain Transfer Services    ${LANGUAGE_DEFAULT}
 
-    Page Should Contain Reservation Footer    ${LANGUAGE}
-    Page Should Contain Main Footer    ${LANGUAGE}
+    Page Should Contain Reservation Footer    ${LANGUAGE_DEFAULT}
+    Page Should Contain Main Footer    ${LANGUAGE_DEFAULT}
 
 User located in "Product" Page
     Common.Navigate To Location    ${START_URL}    ${PATH_PRODUCTS}

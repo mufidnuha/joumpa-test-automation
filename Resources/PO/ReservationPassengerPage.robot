@@ -114,14 +114,20 @@ ${reservation_passenger_booker_nationality_option_1} =          //input[@name="b
 ${reservation_passenger_booker_email_input} =                   //input[@name='bookers_email']
 ${reservation_passenger_booker_phone_number_input} =            //*[@id="root"]//input[@type="tel"]
 
+${reservation_passenger_passenger_total_pax} =                  //p[contains(text(), "Total PAX")]/following-sibling::div/p
+
 ${reservation_passenger_next_button} =                          //div[@style="float: right;"]//button[2]
 ${reservation_passenger_back_button} =                          //div[@style="float: right;"]//button[1]
+&{PASSENGER_DATA} =
+...                                                             adult_pax=${EMPTY}
+...                                                             child_pax=${EMPTY}
+...                                                             infant_pax=${EMPTY}
 
 
 *** Keywords ***
 Page Should Contain Passenger Information Field
-    [Arguments]    ${language}
-    IF    "${language}" == "${LANGUAGE_EN}"
+    [Arguments]    ${LANGUAGE_DEFAULT}
+    IF    "${LANGUAGE_DEFAULT}" == "${LANGUAGE_EN}"
         Page Should Contain    ${reservation_passenger_en_information}
         Page Should Contain    ${reservation_passenger_en_add}
     END
@@ -129,8 +135,8 @@ Page Should Contain Passenger Information Field
     Page Should Contain Element    ${reservation_passenger_add_button}
 
 Page Should Contain Passenger Notes Field
-    [Arguments]    ${language}
-    IF    "${language}" == "${LANGUAGE_EN}"
+    [Arguments]    ${LANGUAGE_DEFAULT}
+    IF    "${LANGUAGE_DEFAULT}" == "${LANGUAGE_EN}"
         Page Should Contain    ${reservation_passenger_en_notes}
         Page Should Contain    ${reservation_passenger_en_add}
     END
@@ -138,8 +144,8 @@ Page Should Contain Passenger Notes Field
     Page Should Contain Element    ${reservation_passenger_notes_input}
 
 Page Should Contain Booker Information
-    [Arguments]    ${language}
-    IF    "${language}" == "${LANGUAGE_EN}"
+    [Arguments]    ${LANGUAGE_DEFAULT}
+    IF    "${LANGUAGE_DEFAULT}" == "${LANGUAGE_EN}"
         Page Should Contain    ${reservation_passenger_en_booker_information}
         Page Should Contain    ${reservation_passenger_en_title}
         Page Should Contain    ${reservation_passenger_en_name}
@@ -155,20 +161,20 @@ Page Should Contain Booker Information
     Page Should Contain Element    ${reservation_passenger_booker_phone_number_input}
 
 The "Passenger" form display correctly
-    [Arguments]    ${language}
+    [Arguments]    ${LANGUAGE_DEFAULT}
 
-    Page Should Contain Header Reservation    ${language}
-    Page Should Contain Process Reservation    ${language}
+    Page Should Contain Header Reservation    ${LANGUAGE_DEFAULT}
+    Page Should Contain Process Reservation    ${LANGUAGE_DEFAULT}
 
-    Page Should Contain Passenger Information Field    ${language}
-    Page Should Contain Passenger Notes Field    ${language}
-    Page Should Contain Booker Information    ${language}
+    Page Should Contain Passenger Information Field    ${LANGUAGE_DEFAULT}
+    Page Should Contain Passenger Notes Field    ${LANGUAGE_DEFAULT}
+    Page Should Contain Booker Information    ${LANGUAGE_DEFAULT}
 
     Page Should Contain Button    ${reservation_passenger_back_button}
     Page Should Contain Button    ${reservation_passenger_next_button}
 
-    Page Should Contain Support Footer    ${language}
-    Page Should Contain Main Footer    ${language}
+    Page Should Contain Support Footer    ${LANGUAGE_DEFAULT}
+    Page Should Contain Main Footer    ${LANGUAGE_DEFAULT}
 
     Checkmark in Flight Section is Green
 
@@ -222,7 +228,7 @@ User has filled in the Passenger form correctly
     ...    ${passenger_name}
     ...    ${passenger_nationality}
     ...    ${passenger_email}
-    ...    ${passsenger_phone_number}
+    ...    ${passenger_phone_number}
     ...    ${has_second_adult}=${False}
     ...    ${has_child}=${False}
     ...    ${has_infant}=${False}
@@ -242,13 +248,13 @@ User has filled in the Passenger form correctly
         Click Element    ${reservation_passenger_add_button}
         ${sequence_passenger} =    Set Variable    1
         Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[1]    20s
-        Select "Title" in Passenger Information    ${second_passenger_title}    ${sequence_passenger}
-        Input Text    ${reservation_passenger_passenger_name_input}[1]    ${second_passenger_name}
+        Select "Title" in Passenger Information    ${prod_second_passenger_title}    ${sequence_passenger}
+        Input Text    ${reservation_passenger_passenger_name_input}[1]    ${prod_second_passenger_name}
         Search and Select "Nationality" in Passenger Information
-        ...    ${second_passenger_nationality}
+        ...    ${prod_second_passenger_nationality}
         ...    ${sequence_passenger}
-        Input Text    ${reservation_passenger_passenger_email_input}[1]    ${second_passenger_email_valid}
-        Input Text    ${reservation_passenger_passenger_phone_number_input}    ${second_passenger_phone_number}
+        Input Text    ${reservation_passenger_passenger_email_input}[1]    ${prod_second_passenger_email_valid}
+        Input Text    ${reservation_passenger_passenger_phone_number_input}    ${prod_second_passenger_phone_number}
 
         Click Button    ${reservation_passenger_passenger_save_button}
         Sleep    3s
@@ -258,10 +264,10 @@ User has filled in the Passenger form correctly
         Click Element    ${reservation_passenger_add_button}
         ${sequence_passenger} =    Set Variable    2
         Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[2]    20s
-        Select "Title" in Passenger Information    ${child_passenger_title}    ${sequence_passenger}
-        Input Text    ${reservation_passenger_passenger_name_input}[2]    ${child_passenger_name}
+        Select "Title" in Passenger Information    ${prod_child_passenger_title}    ${sequence_passenger}
+        Input Text    ${reservation_passenger_passenger_name_input}[2]    ${prod_child_passenger_name}
         Search and Select "Nationality" in Passenger Information
-        ...    ${child_passenger_nationality}
+        ...    ${prod_child_passenger_nationality}
         ...    ${sequence_passenger}
 
         Click Button    ${reservation_passenger_passenger_save_button}
@@ -272,11 +278,11 @@ User has filled in the Passenger form correctly
         Click Element    ${reservation_passenger_add_button}
         ${sequence_passenger} =    Set Variable    3
         Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[3]    20s
-        Select "Title" in Passenger Information    ${infant_passenger_title}    ${sequence_passenger}
-        Input Text    ${reservation_passenger_passenger_name_input}[3]    ${infant_passenger_name}
-        Input Text    ${reservation_passenger_passenger_birth_date_input}[3]    ${infant_passenger_birth_date}
+        Select "Title" in Passenger Information    ${prod_infant_passenger_title}    ${sequence_passenger}
+        Input Text    ${reservation_passenger_passenger_name_input}[3]    ${prod_infant_passenger_name}
+        Input Text    ${reservation_passenger_passenger_birth_date_input}[3]    ${prod_infant_passenger_birth_date}
         Search and Select "Nationality" in Passenger Information
-        ...    ${infant_passenger_nationality}
+        ...    ${prod_infant_passenger_nationality}
         ...    ${sequence_passenger}
 
         Click Button    ${reservation_passenger_passenger_save_button}
@@ -285,6 +291,23 @@ User has filled in the Passenger form correctly
 
     Click Element    ${reservation_passenger_passenger_as_booker_checkbox}
 
+    Get data from "Passenger" form
+
     Click Button    ${reservation_passenger_next_button}
     Sleep    3s
     ReservationOrderExtrasPage.The "Order Extras" form in "Reservation" page displayed correctly    ${LANGUAGE_DEFAULT}
+
+Get data from "Passenger" form
+    ${total_pax} =    Get Text    ${reservation_passenger_passenger_total_pax}
+    ${total_pax} =    Remove String Using Regexp    ${total_pax}    [A-Z][a-z]+
+    ${total_pax} =    Remove String    ${total_pax}    ${SPACE}
+    ${total_pax} =    Split String    ${total_pax}    ,
+    ${adult_pax} =    Set Variable    ${total_pax}[0]
+    ${child_pax} =    Set Variable    ${total_pax}[1]
+    ${infant_pax} =    Set Variable    ${total_pax}[2]
+    Set To Dictionary
+    ...    ${PASSENGER_DATA}
+    ...    adult_pax=${adult_pax}
+    ...    child_pax=${child_pax}
+    ...    infant_pax=${infant_pax}
+    Set Suite Variable    ${PASSENGER_DATA}

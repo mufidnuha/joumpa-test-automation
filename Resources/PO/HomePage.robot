@@ -108,7 +108,7 @@ Page Should Contain Reservation In Indonesian
     Page Should Contain    ${homepage_id_reservation_arrival_date_label}
 
 Page Should Contain Reservation Field
-    [Arguments]    ${LANGUAGE}
+    [Arguments]    ${LANGUAGE_DEFAULT}
 
     Page Should Contain Element    ${homepage_reservation_arrival_button}
     Page Should Contain Element    ${homepage_reservation_departure_button}
@@ -118,7 +118,7 @@ Page Should Contain Reservation Field
     Page Should Contain Element    ${homepage_reservation_arrival_date_input}
     Page Should Contain Button    ${homepage_reservation_booking_button}
 
-    IF    "${LANGUAGE}" == "${HEADER_EN_LANGUAGE_LABEL}"
+    IF    "${LANGUAGE_DEFAULT}" == "${HEADER_EN_LANGUAGE_LABEL}"
         Page Should Contain Reservation In English
     ELSE
         Page Should Contain Reservation In Indonesian
@@ -146,8 +146,8 @@ Page Should Contain Why Joumpa In Indonesian
     Page Should Contain    ${homepage_id_why_joumpa_list}[6]
 
 Page Should Contain Why Joumpa Field
-    [Arguments]    ${LANGUAGE}
-    IF    "${LANGUAGE}" == "${HEADER_EN_LANGUAGE_LABEL}"
+    [Arguments]    ${LANGUAGE_DEFAULT}
+    IF    "${LANGUAGE_DEFAULT}" == "${HEADER_EN_LANGUAGE_LABEL}"
         Page Should Contain Why Joumpa In English
     ELSE
         Page Should Contain Why Joumpa In Indonesian
@@ -170,11 +170,11 @@ Page Should Contain Services In Indonesian
     Page Should Contain    ${homepage_id_services_desc_list}[1]
 
 Page Should Contain Services Field
-    [Arguments]    ${LANGUAGE}
+    [Arguments]    ${LANGUAGE_DEFAULT}
     Page Should Contain Element    ${homepage_services_meet_and_greet_arrow}
     Page Should Contain Element    ${homepage_services_transfer_arrow}
 
-    IF    "${LANGUAGE}" == "${HEADER_EN_LANGUAGE_LABEL}"
+    IF    "${LANGUAGE_DEFAULT}" == "${HEADER_EN_LANGUAGE_LABEL}"
         Page Should Contain Services In English
     ELSE
         Page Should Contain Services In Indonesian
@@ -186,18 +186,18 @@ Page Should Contain Partners Field
     Page Should Contain Element    ${homepage_partners_slick}
 
 Display Correctly
-    [Arguments]    ${LANGUAGE}
+    [Arguments]    ${LANGUAGE_DEFAULT}
 
-    Page Should Contain Header    ${LANGUAGE}
+    Page Should Contain Header    ${LANGUAGE_DEFAULT}
 
     Page Should Contain Element    ${homepage_banner_field}
-    Page Should Contain Reservation Field    ${LANGUAGE}
-    Page Should Contain Why Joumpa Field    ${LANGUAGE}
-    Page Should Contain Services Field    ${LANGUAGE}
+    Page Should Contain Reservation Field    ${LANGUAGE_DEFAULT}
+    Page Should Contain Why Joumpa Field    ${LANGUAGE_DEFAULT}
+    Page Should Contain Services Field    ${LANGUAGE_DEFAULT}
     Page Should Contain Partners Field
 
-    Page Should Contain Reservation Footer    ${LANGUAGE}
-    Page Should Contain Main Footer    ${LANGUAGE}
+    Page Should Contain Reservation Footer    ${LANGUAGE_DEFAULT}
+    Page Should Contain Main Footer    ${LANGUAGE_DEFAULT}
 
 User located in "Home" page
     Common.Navigate To Location    ${START_URL}    ${EMPTY}
