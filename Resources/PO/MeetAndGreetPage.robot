@@ -41,5 +41,5 @@ Display Correctly
     Page Should Contain Main Footer    ${LANGUAGE_DEFAULT}
 
 User located in "Meet And Greet Service" Page
-    Common.Load    ${START_URL}    ${PATH_PRODUCTS_MEET_AND_GREET}
+    Common.Navigate To Location    ${START_URL}    ${PATH_PRODUCTS_MEET_AND_GREET}
     Wait Until Page Contains    ${MAG_MAIN_HEADER}

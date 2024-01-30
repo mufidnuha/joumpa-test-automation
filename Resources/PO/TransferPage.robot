@@ -32,5 +32,5 @@ Display Correctly
     Page Should Contain Main Footer    ${LANGUAGE_DEFAULT}
 
 User located in "Transfer Service" Page
-    Common.Load    ${START_URL}    ${PATH_PRODUCTS_TRANSFER}
+    Common.Navigate To Location    ${START_URL}    ${PATH_PRODUCTS_TRANSFER}
     Wait Until Page Contains    ${TRANSFER_MAIN_HEADER}

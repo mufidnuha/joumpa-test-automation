@@ -21,53 +21,53 @@ Test Teardown       Common.End Web Test
 
 
 *** Test Cases ***
-Verify navigation to "Products" page from "Products" menu
-    [Documentation]    TC-UR002-001
-    [Tags]    ts-ur002-008    ur-pub-002    products    web public
+TC-M02-001
+    [Documentation]    Verify navigation to "Products" page from "Products" menu
+    [Tags]    ts-m02-008    m-pub-02    products    web public
     User located in "Home" page
     Click Element    ${HEADER_PRODUCTS}
     ProductsPage.Display Correctly    ${LANGUAGE_DEFAULT}
 
-Verify navigation to "Products" page from arrow button in Meet And Greet Service
-    [Documentation]    TC-UR002-002
-    [Tags]    ts-ur002-008    ur-pub-002    products    web public
+TC-M02-002
+    [Documentation]    Verify navigation to "Products" page from arrow button in Meet And Greet Service
+    [Tags]    ts-m02-008    m-pub-02    products    web public
     User located in "Home" page
     Scroll Element Into View    xpath:${HOMEPAGE_SERVICES_MEET_AND_GREET_ARROW}
     Click Element    ${HOMEPAGE_SERVICES_MEET_AND_GREET_ARROW}
     ProductsPage.Display Correctly    ${LANGUAGE_DEFAULT}
 
-Verify navigation to "Products" page from arrow button in Transfer Service
-    [Documentation]    TC-UR002-003
-    [Tags]    ts-ur002-008    ur-pub-002    products    web public
+TC-M02-003
+    [Documentation]    Verify navigation to "Products" page from arrow button in Transfer Service
+    [Tags]    ts-m02-008    m-pub-02    products    web public
     User located in "Home" page
     Scroll Element Into View    xpath:${HOMEPAGE_SERVICES_TRANSFER_ARROW}
     Click Element    ${HOMEPAGE_SERVICES_TRANSFER_ARROW}
     ProductsPage.Display Correctly    ${LANGUAGE_DEFAULT}
 
-Verify navigation to "Meet And Greet Service" page from "read more" button in Meet And Greet Service
-    [Documentation]    TC-UR002-004
-    [Tags]    ts-ur002-008    ur-pub-002    products    web public
+TC-M02-004
+    [Documentation]    Verify navigation to "Meet And Greet Service" page from "read more" button in Meet And Greet Service
+    [Tags]    ts-m02-008    m-pub-02    products    web public
     User located in "Product" Page
     Click Element    ${PRODUCTS_MEET_AND_GREET_READ_MORE_BUTTON}
     MeetAndGreetPage.Display Correctly    ${LANGUAGE_DEFAULT}
 
-Verify navigation to "Transfer Service" page from "read more" button in Transfer Service
-    [Documentation]    TC-UR002-005
-    [Tags]    ts-ur002-008    ur-pub-002    products    web public
+TC-M02-005
+    [Documentation]    Verify navigation to "Transfer Service" page from "read more" button in Transfer Service
+    [Tags]    ts-m02-008    m-pub-02    products    web public
     User located in "Product" Page
     Click Element    ${PRODUCTS_TRANSFER_READ_MORE_BUTTON}
     TransferPage.Display Correctly    ${LANGUAGE_DEFAULT}
 
-Verify navigation to "Products" page from back button in Meet And Greet Service page
-    [Documentation]    TC-UR002-006
-    [Tags]    ts-ur002-008    ur-pub-002    products    web public
+TC-M02-006
+    [Documentation]    Verify navigation to "Products" page from back button in Meet And Greet Service page
+    [Tags]    ts-m02-008    m-pub-02    products    web public
     User located in "Meet And Greet Service" Page
     Click Element    ${MAG_BACK_BUTTON}
     ProductsPage.Display Correctly    ${LANGUAGE_DEFAULT}
 
-Verify navigation to "Products" page from back button in Transfer Service page
-    [Documentation]    TC-UR002-007
-    [Tags]    ts-ur002-008    ur-pub-002    products    web public
+TC-M02-007
+    [Documentation]    Verify navigation to "Products" page from back button in Transfer Service page
+    [Tags]    ts-m02-008    m-pub-02    products    web public
     User located in "Transfer Service" Page
     Click Element    ${TRANSFER_BACK_BUTTON}
     ProductsPage.Display Correctly    ${LANGUAGE_DEFAULT}

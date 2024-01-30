@@ -186,18 +186,18 @@ Page Should Contain Partners Field
     Page Should Contain Element    ${homepage_partners_slick}
 
 Display Correctly
-    [Arguments]    ${LANGUAGE_DEFAULT}
+    [Arguments]    ${language}
 
-    Page Should Contain Header    ${LANGUAGE_DEFAULT}
+    Page Should Contain Header    ${language}
 
     Page Should Contain Element    ${homepage_banner_field}
-    Page Should Contain Reservation Field    ${LANGUAGE_DEFAULT}
-    Page Should Contain Why Joumpa Field    ${LANGUAGE_DEFAULT}
-    Page Should Contain Services Field    ${LANGUAGE_DEFAULT}
+    Page Should Contain Reservation Field    ${language}
+    Page Should Contain Why Joumpa Field    ${language}
+    Page Should Contain Services Field    ${language}
     Page Should Contain Partners Field
 
-    Page Should Contain Reservation Footer    ${LANGUAGE_DEFAULT}
-    Page Should Contain Main Footer    ${LANGUAGE_DEFAULT}
+    Page Should Contain Reservation Footer    ${language}
+    Page Should Contain Main Footer    ${language}
 
 User located in "Home" page
     Common.Navigate To Location    ${START_URL}    ${EMPTY}

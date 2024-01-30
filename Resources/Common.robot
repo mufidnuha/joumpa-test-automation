@@ -70,43 +70,41 @@ Navigate To Location
     Go To    ${URL}
 
 Loaded All Pages
-    [Arguments]    ${LANGUAGE_DEFAULT}
-    HomePage.Display Correctly    ${LANGUAGE_DEFAULT}
+    [Arguments]    ${language}
+    HomePage.Display Correctly    ${language}
 
     Common.Navigate To Location    ${START_URL}    ${PATH_PRODUCTS}
-    ProductsPage.Display Correctly    ${LANGUAGE_DEFAULT}
+    ProductsPage.Display Correctly    ${language}
 
     Common.Navigate To Location    ${START_URL}    ${PATH_OUR_LOCATION}
-    OurLocationPage.Display Correctly    ${LANGUAGE_DEFAULT}
+    OurLocationPage.Display Correctly    ${language}
 
     Common.Navigate To Location    ${START_URL}    ${PATH_MANAGE_BOOKING}
-    ManageBookingPage.Display Correctly    ${LANGUAGE_DEFAULT}
+    ManageBookingPage.Display Correctly    ${language}
 
     Common.Navigate To Location    ${START_URL}    ${PATH_CONTACT_US}
-    ContactUsPage.Display Correctly    ${LANGUAGE_DEFAULT}
+    ContactUsPage.Display Correctly    ${language}
 
     Common.Navigate To Location    ${START_URL}    ${PATH_TERMS_AND_CONDITIONS}
-    TermsAndConditionPage.Display Correctly    ${LANGUAGE_DEFAULT}
+    TermsAndConditionPage.Display Correctly    ${language}
 
     Common.Navigate To Location    ${START_URL}    ${PATH_PRIVACY_POLICY}
-    PrivacyPolicyPage.Display Correctly    ${LANGUAGE_DEFAULT}
+    PrivacyPolicyPage.Display Correctly    ${language}
 
     Common.Navigate To Location    ${START_URL}    ${PATH_PRODUCTS_MEET_AND_GREET}
-    MeetAndGreetPage.Display Correctly    ${LANGUAGE_DEFAULT}
+    MeetAndGreetPage.Display Correctly    ${language}
 
     Common.Navigate To Location    ${START_URL}    ${PATH_PRODUCTS_TRANSFER}
-    TransferPage.Display Correctly    ${LANGUAGE_DEFAULT}
+    TransferPage.Display Correctly    ${language}
 
     Common.Navigate To Location    ${LOGIN_URL}    ${EMPTY}
-    LoginPage.Display Correctly    ${LANGUAGE_DEFAULT}
+    LoginPage.Display Correctly    ${language}
 
 All Page Displayed in English
-    ${LANGUAGE_DEFAULT} =    Set Variable    EN
-    Loaded All Pages    ${LANGUAGE_DEFAULT}
+    Loaded All Pages    ${LANGUAGE_EN}
 
 All Page Displayed in Indonesian
-    ${LANGUAGE_DEFAULT} =    Set Variable    IN
-    Loaded All Pages    ${LANGUAGE_DEFAULT}
+    Loaded All Pages    ${LANGUAGE_ID}
 
 Element Should Contain Date
     [Arguments]    ${xpath}    ${date}    ${month}    ${year}

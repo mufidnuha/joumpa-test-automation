@@ -21,17 +21,17 @@ Test Teardown       Common.End Web Test
 
 
 *** Test Cases ***
-Change language to Indonesian
-    [Documentation]    TC-UR005-001
-    [Tags]    ts-ur005-011    ur-pub-005    change language    web public
+TC-M05-001
+    [Documentation]    Change language to Indonesian
+    [Tags]    ts-m05-011    m-pub-05    change language    web public
     User located in "Home" page and language in English
     Click Element    ${HEADER_LANGUAGE_ACTIVE}
     Click Button    ${HEADER_LANGUAGE_ID_BUTTON}
     All Page Displayed in Indonesian
 
-Change language to English
-    [Documentation]    TC-UR005-001
-    [Tags]    ts-ur005-012    ur-pub-005    change language    web public
+TC-M05-002
+    [Documentation]    Change language to English
+    [Tags]    ts-m05-012    m-pub-05    change language    web public
     User located in "Home" page and language in Indonesian
     Click Element    ${HEADER_LANGUAGE_ACTIVE}
     Click Button    ${HEADER_LANGUAGE_EN_BUTTON}

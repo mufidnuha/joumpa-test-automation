@@ -12,8 +12,8 @@ ${header_contact_us} =                  //div[@class="main-navbar "]//ul/li[5]/a
 ${header_login_button} =                //div[@class="main-navbar "]//ul/li[7]//button
 
 ${header_language_flag} =               //div[@class="main-navbar "]//ul/li[6]//img
-${header_language_id_button} =          //button[text()="English"]
-${header_language_en_button} =          //button[text()="Indonesian"]
+${header_language_en_button} =          //button[text()="English"]
+${header_language_id_button} =          //button[text()="Indonesian"]
 ${header_language_active} =             //div[@class="main-navbar "]//ul/li[6]/a/span
 
 ${header_en_home_label} =               Home

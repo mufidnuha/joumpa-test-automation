@@ -21,32 +21,32 @@ Test Teardown       Common.End Web Test
 
 
 *** Test Cases ***
-Verify navigation to "Contact Us" page from "Contact Us" menu in header
-    [Documentation]    TC-UR004-001
-    [Tags]    ts-ur004-010    urd-pub-004    support    web public
+TC-M04-001
+    [Documentation]    Verify navigation to "Contact Us" page from "Contact Us" menu in header
+    [Tags]    ts-m04-010    urd-pub-004    support    web public
     User located in "Home" page
     Click Element    ${HEADER_CONTACT_US}
     ContactUsPage.Display Correctly    ${LANGUAGE_DEFAULT}
 
-Verify navigation to "Contact Us" page from "Contact Us" menu in footer
-    [Documentation]    TC-UR004-002
-    [Tags]    ts-ur004-010    urd-pub-004    support    web public
+TC-M04-002
+    [Documentation]    Verify navigation to "Contact Us" page from "Contact Us" menu in footer
+    [Tags]    ts-m04-010    urd-pub-004    support    web public
     User located in "Home" page
     Scroll Element Into View    ${FOOTER_CONTACT_US}
     Click Element    ${FOOTER_CONTACT_US}
     ContactUsPage.Display Correctly    ${LANGUAGE_DEFAULT}
 
-Verify to Gapura's hotline whatsapp from whatsapp floating button
-    [Documentation]    TC-UR004-003
-    [Tags]    ts-ur004-010    urd-pub-004    support    web public
+TC-M04-003
+    [Documentation]    Verify to Gapura's hotline whatsapp from whatsapp floating button
+    [Tags]    ts-m04-010    m-pub-04    support    web public
     User located in "Home" page
     Click Element    ${WHATSAPP_FLOATING_BUTTON}
     Switch Window    NEW
     Location Should Be    ${WHATSAPP_HOTLINE_URL}
 
-Verify navigation to "Contact Us" page from "Go To Support" button in "Reservation" page
-    [Documentation]    TC-UR004-004
-    [Tags]    ts-ur004-010    urd-pub-004    support    web public
+TC-M04-004
+    [Documentation]    Verify navigation to "Contact Us" page from "Go To Support" button in "Reservation" page
+    [Tags]    ts-m04-010    urd-pub-004    support    web public
     User located in "Reservation" Page
     Scroll Element Into View    ${FOOTER_SUPPORT_BUTTON}
     Click Button    ${FOOTER_SUPPORT_BUTTON}

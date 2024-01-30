@@ -21,16 +21,16 @@ Test Teardown       Common.End Web Test
 
 
 *** Test Cases ***
-Verify navigation to "Our Location" page from "Our Location" menu in header
-    [Documentation]    TC-UR003-001
-    [Tags]    ts-ur003-009    ur-pub-003    location    web public
+TC-M03-001
+    [Documentation]    Verify navigation to "Our Location" page from "Our Location" menu in header
+    [Tags]    ts-m03-009    m-pub-03    location    web public
     User located in "Home" page
     Click Element    ${HEADER_OUR_LOCATION}
     OurLocationPage.Display Correctly    ${LANGUAGE_DEFAULT}
 
-Verify navigation to "Our Location" page from "Our Location" menu in footer
-    [Documentation]    TC-UR003-002
-    [Tags]    ts-ur003-009    ur-pub-003    location    web public
+TC-M03-002
+    [Documentation]    Verify navigation to "Our Location" page from "Our Location" menu in footer
+    [Tags]    ts-m03-009    m-pub-03    location    web public
     User located in "Home" page
     Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
     Click Element    ${FOOTER_OUR_LOCATION}
