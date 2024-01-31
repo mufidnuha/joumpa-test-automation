@@ -40,7 +40,8 @@ TC-M07-001
     The "Reservation" page display correctly
     ...    ${LANGUAGE_DEFAULT}
     ...    ${FLIGHT_TYPE_ARRIVAL}
-
+    Sleep    3s
+    
 TC-M07-002
     [Documentation]    Verify the data transfer and navigate to the "Reservation" page for the "Arrival" flight with the "Origin" field filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -57,7 +58,8 @@ TC-M07-002
     ReservationFlightPage.The "Arrival" is selected as "Flight Type"
     ReservationFlightPage.The "Origin" field is filled with
     ...    ${prod_airport_surabaya}[airport]
-
+    Sleep    3s
+    
 TC-M07-003
     [Documentation]    Verify the data transfer and navigate to the "Reservation" page for the "Arrival" flight with the "Origin" and "Destination" fields filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -79,7 +81,8 @@ TC-M07-003
     ReservationFlightPage.The "Destination" field is filled with
     ...    ${prod_airport_tangerang}[airport]
     ReservationFlightPage.The "Products" field contain MEET & GREET INTERNATIONAL and its description
-
+    Sleep    3s
+    
 TC-M07-004
     [Documentation]    Verify the data transfer and navigate to "Reservation" page for the "Arrival" flight with the "Origin" and "Arrival Date" fields filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -99,7 +102,8 @@ TC-M07-004
     ...    ${prod_arrival_date_valid_dict}[date]
     ...    ${prod_arrival_date_valid_dict}[month]
     ...    ${prod_arrival_date_valid_dict}[year]
-
+    Sleep    3s
+    
 TC-M07-005
     [Documentation]    Verify the data transfer and navigate to "Reservation" page for the "Arrival" flight with "Destination" field filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -113,7 +117,8 @@ TC-M07-005
     ReservationFlightPage.The "Arrival" is selected as "Flight Type"
     ReservationFlightPage.The "Destination" field is filled with
     ...    ${prod_airport_yogyakarta}[airport]
-
+    Sleep    3s
+    
 TC-M07-006
     [Documentation]    Verify the data transfer and navigate to "Reservation" page for the "Arrival" flight with "Destination" and "Arrival Date" fields filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -132,7 +137,8 @@ TC-M07-006
     ...    ${prod_arrival_date_valid_dict}[date]
     ...    ${prod_arrival_date_valid_dict}[month]
     ...    ${prod_arrival_date_valid_dict}[year]
-
+    Sleep    3s
+    
 TC-M07-007
     [Documentation]    Verify the data transfer and navigate to "Reservation" page for the "Arrival" flight with "Arrival Date" field filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -146,7 +152,8 @@ TC-M07-007
     ...    ${prod_arrival_date_valid_dict}[date]
     ...    ${prod_arrival_date_valid_dict}[month]
     ...    ${prod_arrival_date_valid_dict}[year]
-
+    Sleep    3s
+    
 TC-M07-008
     [Documentation]    Verify the data transfer and navigate to "Reservation" page for the "Arrival" flight with all fields filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -174,7 +181,8 @@ TC-M07-008
     ...    ${prod_arrival_date_valid_dict}[month]
     ...    ${prod_arrival_date_valid_dict}[year]
     ReservationFlightPage.The "Products" field contain MEET & GREET DOMESTIC and its description
-
+    Sleep    3s
+    
 TC-M07-009
     [Documentation]    Verify an alerts appears when input "Arrival Date" less than today in Initial Form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -183,7 +191,8 @@ TC-M07-009
     Click Button    ${homepage_reservation_booking_button}
 
     Show Alerts    Date must be greater than equal to    ${True}
-
+    Sleep    3s
+    
 TC-M07-010
     [Documentation]    Verify navigation to "Passenger" form with all required fields on a "Flight" form are filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -193,7 +202,7 @@ TC-M07-010
     ReservationFlightPage.Search and select the airport in the "Origin" field
     ...    ${prod_airport_surabaya}[keyword]
     ...    ${prod_airport_surabaya}[airport]
-
+    Sleep    2s
     ReservationFlightPage.Search and select the airport in the "Destination" field
     ...    ${prod_airport_semarang}[keyword]
     ...    ${prod_airport_semarang}[airport]
@@ -209,7 +218,8 @@ TC-M07-010
     Click Element    ${reservation_flight_products}
     Click Button    ${reservation_flight_next_button}
     ReservationPassengerPage.The "Passenger" form display correctly    ${LANGUAGE_DEFAULT}
-
+    Sleep    3s
+    
 TC-M07-011
     [Documentation]    Verify an alerts appears without completing all fields in "Flight" Form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -219,7 +229,8 @@ TC-M07-011
 
     Show "Not Available" in "Products" field    ${LANGUAGE_DEFAULT}
     Show Alerts    Please complete the data Flight Type!
-
+    Sleep    3s
+    
 TC-M07-012
     [Documentation]    Verify an alert appears with only the "Flight Type" field not filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -228,6 +239,7 @@ TC-M07-012
     ReservationFlightPage.Search and select the airport in the "Origin" field
     ...    ${prod_airport_surabaya}[keyword]
     ...    ${prod_airport_surabaya}[airport]
+    Sleep    2s
     ReservationFlightPage.Search and select the airport in the "Destination" field
     ...    ${prod_airport_semarang}[keyword]
     ...    ${prod_airport_semarang}[airport]
@@ -242,7 +254,8 @@ TC-M07-012
 
     Show "Not Available" in "Products" field    ${LANGUAGE_DEFAULT}
     Show Alerts    Please complete the data Flight Type!
-
+    Sleep    3s
+    
 TC-M07-013
     [Documentation]    Verify an alerts appears with only the "Origin" field not filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -263,7 +276,8 @@ TC-M07-013
 
     Show "Not Available" in "Products" field    ${LANGUAGE_DEFAULT}
     Show Alerts    Please complete the data Product!
-
+    Sleep    3s
+    
 TC-M07-014
     [Documentation]    Verify an alerts appears with only the "Destination" field not filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -284,7 +298,8 @@ TC-M07-014
 
     Show "Not Available" in "Products" field    ${LANGUAGE_DEFAULT}
     Show Alerts    Please complete the data Product!
-
+    Sleep    3s
+    
 TC-M07-015
     [Documentation]    Verify an alert appears with only the "Airline" field not filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -305,7 +320,8 @@ TC-M07-015
     Click Button    ${reservation_flight_next_button}
     Element Should Contain    ${reservation_flight_flight_info_airline_code}    ${EMPTY}
     Show Alerts    Please complete the data Airline!
-
+    Sleep    3s
+    
 TC-M07-016
     [Documentation]    Verify an alert appears with only the "Flight Number" field not filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -315,6 +331,7 @@ TC-M07-016
     ReservationFlightPage.Search and select the airport in the "Origin" field
     ...    ${prod_airport_surabaya}[keyword]
     ...    ${prod_airport_surabaya}[airport]
+    Sleep    2s
     ReservationFlightPage.Search and select the airport in the "Destination" field
     ...    ${prod_airport_semarang}[keyword]
     ...    ${prod_airport_semarang}[airport]
@@ -329,7 +346,8 @@ TC-M07-016
     Sleep    3s
 
     Show Alerts    Please complete the data Flight Number!
-
+    Sleep    3s
+    
 TC-M07-017
     [Documentation]    Verify an alert appears with only the "Arrival Date" field not filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -339,6 +357,7 @@ TC-M07-017
     ReservationFlightPage.Search and select the airport in the "Origin" field
     ...    ${prod_airport_surabaya}[keyword]
     ...    ${prod_airport_surabaya}[airport]
+    Sleep    2s
     ReservationFlightPage.Search and select the airport in the "Destination" field
     ...    ${prod_airport_semarang}[keyword]
     ...    ${prod_airport_semarang}[airport]
@@ -353,7 +372,8 @@ TC-M07-017
     Sleep    3s
 
     Show Alerts    Please complete the data Date!
-
+    Sleep    3s
+    
 TC-M07-018
     [Documentation]    Verify an alert appears with only the "Estimate Time Arrival" field not filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -363,6 +383,7 @@ TC-M07-018
     ReservationFlightPage.Search and select the airport in the "Origin" field
     ...    ${prod_airport_surabaya}[keyword]
     ...    ${prod_airport_surabaya}[airport]
+    Sleep    2s
     ReservationFlightPage.Search and select the airport in the "Destination" field
     ...    ${prod_airport_semarang}[keyword]
     ...    ${prod_airport_semarang}[airport]
@@ -376,7 +397,8 @@ TC-M07-018
     Click Button    ${reservation_flight_next_button}
 
     Show Alerts    Please complete the data Time!
-
+    Sleep    3s
+    
 TC-M07-019
     [Documentation]    Verify an alert appears with only the "Products" field not filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -386,6 +408,7 @@ TC-M07-019
     ReservationFlightPage.Search and select the airport in the "Origin" field
     ...    ${prod_airport_surabaya}[keyword]
     ...    ${prod_airport_surabaya}[airport]
+    Sleep    2s
     ReservationFlightPage.Search and select the airport in the "Destination" field
     ...    ${prod_airport_semarang}[keyword]
     ...    ${prod_airport_semarang}[airport]
@@ -399,7 +422,8 @@ TC-M07-019
     Click Button    ${reservation_flight_next_button}
 
     Show Alerts    Please complete the data Product!
-
+    Sleep    3s
+    
 # TC-M07-020
 #    [Documentation]    Verify an alerts appears when choose the same airport in "Origin" and "Destination" field
 #    [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public    manual
@@ -415,7 +439,8 @@ TC-M07-019
 #    ...    ${prod_airport_surabaya}[airport]
 
 #    Show Alerts    Can't select the same airport!
-
+    Sleep    3s
+    
 TC-M07-021
     [Documentation]    Verify an alerts appears when input arrival date less than today
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -425,6 +450,7 @@ TC-M07-021
     ReservationFlightPage.Search and select the airport in the "Origin" field
     ...    ${prod_airport_surabaya}[keyword]
     ...    ${prod_airport_surabaya}[airport]
+    Sleep    2s
     ReservationFlightPage.Search and select the airport in the "Destination" field
     ...    ${prod_airport_semarang}[keyword]
     ...    ${prod_airport_semarang}[airport]
@@ -439,7 +465,8 @@ TC-M07-021
     Click Button    ${reservation_flight_next_button}
 
     Show Alerts    Date must be greater than equal to    ${True}
-
+    Sleep    3s
+    
 TC-M07-022
     [Documentation]    Verify an alerts appears when input "Arrival Date" today and "Estimation Arrival Time" less than now
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -449,6 +476,7 @@ TC-M07-022
     ReservationFlightPage.Search and select the airport in the "Origin" field
     ...    ${prod_airport_surabaya}[keyword]
     ...    ${prod_airport_surabaya}[airport]
+    Sleep    2s
     ReservationFlightPage.Search and select the airport in the "Destination" field
     ...    ${prod_airport_semarang}[keyword]
     ...    ${prod_airport_semarang}[airport]
@@ -464,7 +492,8 @@ TC-M07-022
     Click Button    ${reservation_flight_next_button}
 
     Show alerts    Your estimated arrival has passed!
-
+    Sleep    3s
+    
 TC-M07-023
     [Documentation]    Verify navigation to "Order Extras" form with all required fields on a form are filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -493,7 +522,8 @@ TC-M07-023
     Click Button    ${reservation_passenger_next_button}
     Sleep    3s
     ReservationOrderExtrasPage.The "Order Extras" form in "Reservation" page displayed correctly    ${LANGUAGE_DEFAULT}
-
+    Sleep    3s
+    
 TC-M07-024
     [Documentation]    Verify navigation to "Order Extras" form with all required fields are filled in excepts Passenger Notes field
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -521,7 +551,8 @@ TC-M07-024
     Click Button    ${reservation_passenger_next_button}
     Sleep    3s
     ReservationOrderExtrasPage.The "Order Extras" form in "Reservation" page displayed correctly    ${LANGUAGE_DEFAULT}
-
+    Sleep    3s
+    
 TC-M07-025
     [Documentation]    Verify navigation to "Order Extras" form with two passenger added and all required fields on a form are filled in
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -561,7 +592,8 @@ TC-M07-025
     Click Element    ${reservation_passenger_passenger_as_booker_checkbox}
 
     Click Button    ${reservation_passenger_next_button}
-
+    Sleep    3s
+    
 TC-M07-026
     [Documentation]    Verify an alerts appears without completing all fields in "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -577,7 +609,8 @@ TC-M07-026
     Click Button    ${reservation_passenger_next_button}
 
     Show Alerts    Please complete the data Passenger!
-
+    Sleep    3s
+    
 TC-M07-027
     [Documentation]    Verify an alert appears without fill passenger in "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -599,7 +632,8 @@ TC-M07-027
     Click Button    ${reservation_passenger_next_button}
 
     Show Alerts    Please complete the data Passenger!
-
+    Sleep    3s
+    
 TC-M07-028
     [Documentation]    Verify an alerts appears with the "Title" field not filled in Passenger Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -621,7 +655,8 @@ TC-M07-028
     Click Button    ${reservation_passenger_passenger_save_button}
 
     Show Alerts    Please complete the data Title!
-
+    Sleep    3s
+    
 TC-M07-029
     [Documentation]    Verify an alerts appears with the "Name" field not filled in Passenger Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -643,7 +678,8 @@ TC-M07-029
     Click Button    ${reservation_passenger_passenger_save_button}
 
     Show Alerts    Please complete the data Name!
-
+    Sleep    3s
+    
 TC-M07-030
     [Documentation]    Verify an alerts appears with the "Nationality" field not filled in Passenger Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -665,7 +701,8 @@ TC-M07-030
     Click Button    ${reservation_passenger_passenger_save_button}
 
     Show Alerts    Please complete the data Nationality!
-
+    Sleep    3s
+    
 TC-M07-031
     [Documentation]    Verify an alerts appears with the "Email" field not filled in Passenger Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -687,7 +724,8 @@ TC-M07-031
     Click Button    ${reservation_passenger_passenger_save_button}
 
     Show Alerts    Please complete the data Email!
-
+    Sleep    3s
+    
 TC-M07-032
     [Documentation]    Verify an alerts appears with the "Phone Number" field not filled in Passenger Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -709,7 +747,8 @@ TC-M07-032
     Click Button    ${reservation_passenger_passenger_save_button}
 
     Show Alerts    Please complete the data Phone Number!
-
+    Sleep    3s
+    
 TC-M07-033
     [Documentation]    Verify an alerts appears with the "Name" field not filled in the second passenger
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -745,7 +784,8 @@ TC-M07-033
     Click Button    ${reservation_passenger_passenger_save_button}
 
     Show Alerts    Please complete the data Name!
-
+    Sleep    3s
+    
 TC-M07-034
     [Documentation]    Verify an alert appears without fill passenger in "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -767,7 +807,8 @@ TC-M07-034
     Click Button    ${reservation_passenger_passenger_save_button}
 
     Show Alerts    Wrong email format!
-
+    Sleep    3s
+    
 TC-M07-035
     [Documentation]    Verify an alerts appears with the "Title" field not filled in Booker Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -799,7 +840,8 @@ TC-M07-035
     Click Button    ${reservation_passenger_next_button}
 
     Show Alerts    Please complete the data Booker Information!
-
+    Sleep    3s
+    
 TC-M07-036
     [Documentation]    Verify an alerts appears with the "Name" field not filled in Booker Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -831,7 +873,8 @@ TC-M07-036
     Click Button    ${reservation_passenger_next_button}
 
     Show Alerts    Please complete the data Booker Information!
-
+    Sleep    3s
+    
 TC-M07-037
     [Documentation]    Verify an alerts appears with the "Nationality" field not filled in Booker Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -863,7 +906,8 @@ TC-M07-037
     Click Button    ${reservation_passenger_next_button}
 
     Show Alerts    Please complete the data Booker Information!
-
+    Sleep    3s
+    
 TC-M07-038
     [Documentation]    Verify an alerts appears with the "Email" field not filled in Booker Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -895,7 +939,8 @@ TC-M07-038
     Click Button    ${reservation_passenger_next_button}
 
     Show Alerts    Please complete the data Booker Information!
-
+    Sleep    3s
+    
 TC-M07-039
     [Documentation]    Verify an alerts appears with the "Invalid Email" format in Booker Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -928,7 +973,8 @@ TC-M07-039
     Click Button    ${reservation_passenger_next_button}
 
     Show Alerts    Wrong email format Booker!
-
+    Sleep    3s
+    
 TC-M07-040
     [Documentation]    Verify an alerts appears with the "Phone Number" field not filled in Booker Information of "Passenger" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -960,7 +1006,8 @@ TC-M07-040
     Click Button    ${reservation_passenger_next_button}
 
     Show Alerts    Please complete the data Booker Information!
-
+    Sleep    3s
+    
 TC-M07-041
     [Documentation]    Verify navigation to Check Out form without complete the form in "Order Extras" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -982,7 +1029,8 @@ TC-M07-041
     Click Button    ${reservation_orderextras_next_button}
 
     ReservationCheckOutPage.The "Check Out" page display correctly    ${LANGUAGE_DEFAULT}
-
+    Sleep    3s
+    
 TC-M07-042
     [Documentation]    Verify the total of "Order Extras" for Lounge and verify navigation to Check Out with booking Lounge in "Order Extras"
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -1024,7 +1072,8 @@ TC-M07-042
     ...    ${orderextras_adult_total}
     ...    ${orderextras_child_total}
     ...    ${orderextras_infant_total}
-
+    Sleep    3s
+    
 TC-M07-043
     [Documentation]    Verify an alerts appears without select Lounge type but fill in total Adult and Child in "Order Extras"
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -1049,7 +1098,8 @@ TC-M07-043
     Click Button    ${reservation_orderextras_next_button}
 
     Show Alerts    Please complete the Lounge type!
-
+    Sleep    3s
+    
 TC-M07-044
     [Documentation]    Verify navigation to "Check Out" form with only booking "Transportion" in "Order Extras"
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -1080,7 +1130,8 @@ TC-M07-044
     ReservationCheckOutPage.The "Check Out" page display correctly    ${LANGUAGE_DEFAULT}
     "Transportation" total in "Order Extras" form should be equal total in "Check Out" form
     ...    ${orderextras_transportation_total}
-
+    Sleep    3s
+    
 TC-M07-045
     [Documentation]    Verify an alerts appears without select "Region" in Transportation "Order Extras"
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -1104,7 +1155,8 @@ TC-M07-045
     Click Button    ${reservation_orderextras_next_button}
 
     Show Alerts    Please complete the data Transportation!
-
+    Sleep    3s
+    
 TC-M07-046
     [Documentation]    Verify an alerts appears without select "Car Type" in Transportation "Order Extras"
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -1130,7 +1182,8 @@ TC-M07-046
     Click Button    ${reservation_orderextras_next_button}
 
     Show Alerts    Please complete the data Transportation!
-
+    Sleep    3s
+    
 TC-M07-047
     [Documentation]    Verify an alerts appears without input "Total Unit" in Transportation "Order Extras"
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -1156,7 +1209,8 @@ TC-M07-047
     Click Button    ${reservation_orderextras_next_button}
 
     Show Alerts    Please complete the data Transportation!
-
+    Sleep    3s
+    
 TC-M07-048
     [Documentation]    Verify an alerts appears when input adult's lounge more than total adult passenger
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -1187,7 +1241,8 @@ TC-M07-048
     Click Button    ${reservation_orderextras_next_button}
 
     Show Alerts    The number of adult lounges cannot be more than the number of adult passengers!
-
+    Sleep    3s
+    
 TC-M07-049
     [Documentation]    Verify an alerts appears when input child's lounge more than total child passenger
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -1218,7 +1273,8 @@ TC-M07-049
     Click Button    ${reservation_orderextras_next_button}
 
     Show Alerts    The number of child lounges cannot be more than the number of child passengers!
-
+    Sleep    3s
+    
 TC-M07-050
     [Documentation]    Verify an alerts appears when input infant's lounge more than total infant passenger
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -1249,7 +1305,8 @@ TC-M07-050
     Click Button    ${reservation_orderextras_next_button}
 
     Show Alerts    The number of infant lounges cannot be more than the number of infant passengers!
-
+    Sleep    3s
+    
 TC-M07-051
     [Documentation]    Verify the data in the "Flight" form, "Passenger" form, and "Order Extras" form matches in "Booking Resume", "Order Extras", and "Detail Price" fields in "Check Out" form
     [Tags]    ts-m07-015    m-pub-07    reservation    arrival    web public
@@ -1353,7 +1410,7 @@ Show Alerts
     ...    ${orderextras_adult_total}
     ...    ${orderextras_child_total}
     ...    ${orderextras_infant_total}
-    ...    ${LANGUAGE_DEFAULT}=${LANGUAGE_DEFAULT}
+    ...    ${language}=${LANGUAGE_DEFAULT}
 
     ${checkout_lounge_total} =    Get Text    ${reservation_checkout_en_detail_price_lounge_total}
     ${checkout_lounge_total} =    Remove String    ${checkout_lounge_total}    .    Rp    ${SPACE}
@@ -1361,7 +1418,16 @@ Show Alerts
     Click Element    ${reservation_checkout_en_detail_price_lounge_expand}
     ${checkout_adult_total}
     ...    ${checkout_child_total}
-    ...    ${checkout_infant_total} =    Get "Lounge" details in "Detail Price"    ${LANGUAGE_DEFAULT}
+    ...    ${checkout_infant_total}
+    ...    ${checkout_adult_number}
+    ...    ${checkout_child_number}
+    ...    ${checkout_infant_number}
+    ...    ${checkout_adult_price}
+    ...    ${checkout_child_price}
+    ...    ${checkout_infant_price}
+    ...    ${checkout_total} =
+    ...    Get "Lounge" details in "Detail Price"
+    ...    ${language}
 
     Should Be Equal    ${orderextras_lounge_total}    ${checkout_lounge_total}
     Should Be Equal    ${orderextras_adult_total}    ${checkout_adult_total}
@@ -1369,13 +1435,13 @@ Show Alerts
     Should Be Equal    ${orderextras_infant_total}    ${checkout_infant_total}
 
 "Transportation" total in "Order Extras" form should be equal total in "Check Out" form
-    [Arguments]    ${orderextras_transportation_total}    ${LANGUAGE_DEFAULT}=${LANGUAGE_DEFAULT}
+    [Arguments]    ${orderextras_transportation_total}    ${language}=${LANGUAGE_DEFAULT}
 
     ${checkout_transportation_unit}
     ...    ${checkout_transportation_price}
     ...    ${checkout_transportation_total} =
     ...    Get "Transportation" details in "Detail Price"
-    ...    ${LANGUAGE_DEFAULT}
+    ...    ${language}
 
     Should Be Equal    ${orderextras_transportation_total}    ${checkout_transportation_total}
 

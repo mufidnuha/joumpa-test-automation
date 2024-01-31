@@ -419,9 +419,9 @@ Get "Lounge" details in "Detail Price"
     RETURN    ${lounge_adult_total}    ${lounge_child_total}    ${lounge_infant_total}    ${lounge_adult_number}    ${lounge_child_number}    ${lounge_infant_number}    ${lounge_adult_price}    ${lounge_child_price}    ${lounge_infant_price}    ${lounge_total}
 
 Get "Transportation" details in "Detail Price"
-    [Arguments]    ${LANGUAGE_DEFAULT}
+    [Arguments]    ${language}=${LANGUAGE_DEFAULT}
 
-    IF    "${LANGUAGE_DEFAULT}" == "${LANGUAGE_EN}"
+    IF    "${language}" == "${LANGUAGE_EN}"
         ${transportation} =    Get Text    ${reservation_checkout_en_detail_price_transportation_total}
     ELSE
         ${transportation} =    Get Text    ${reservation_checkout_id_detail_price_transportation_total}
@@ -437,9 +437,9 @@ Get "Transportation" details in "Detail Price"
     RETURN    ${transportation_unit}    ${transportation_price}    ${transportation_total}
 
 Get "Detail Price" data in "Check Out" form
-    [Arguments]    ${LANGUAGE_DEFAULT}=${LANGUAGE_DEFAULT}
+    [Arguments]    ${language}=${LANGUAGE_DEFAULT}
 
-    IF    "${LANGUAGE_DEFAULT}" == "${LANGUAGE_EN}"
+    IF    "${language}" == "${LANGUAGE_EN}"
         ${CHECKOUT_GRAND_TOTAL} =    Get Text    ${reservation_checkout_en_detail_price_grand_total}
         ${CHECKOUT_PRICE_SERVICE_TOTAL} =    Get Text    ${reservation_checkout_en_detail_price_price_service_total}
     ELSE
@@ -462,7 +462,7 @@ Get "Detail Price" data in "Check Out" form
     ...    ${price_service_child_total}
     ...    ${price_service_infant_total} =
     ...    Get "Price Service" details in "Detail Price"
-    ...    ${LANGUAGE_DEFAULT}
+    ...    ${language}
 
     Click Element    ${reservation_checkout_en_detail_price_lounge_expand}
     ${lounge_adult_total}
@@ -476,13 +476,13 @@ Get "Detail Price" data in "Check Out" form
     ...    ${lounge_infant_price}
     ...    ${lounge_total} =
     ...    Get "Lounge" details in "Detail Price"
-    ...    ${LANGUAGE_DEFAULT}
+    ...    ${language}
 
     ${transportation_unit}
     ...    ${transportation_price}
     ...    ${transportation_total} =
     ...    Get "Transportation" details in "Detail Price"
-    ...    ${LANGUAGE_DEFAULT}
+    ...    ${language}
 
     Set To Dictionary    ${CHECKOUT_PRICE_SERVICE_DATA}    adult_number=${price_service_adult_number}
     ...    child_number=${price_service_child_number}

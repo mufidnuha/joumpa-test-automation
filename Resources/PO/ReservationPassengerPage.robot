@@ -126,8 +126,9 @@ ${reservation_passenger_back_button} =                          //div[@style="fl
 
 *** Keywords ***
 Page Should Contain Passenger Information Field
-    [Arguments]    ${LANGUAGE_DEFAULT}
-    IF    "${LANGUAGE_DEFAULT}" == "${LANGUAGE_EN}"
+    [Arguments]    ${language}=${LANGUAGE_DEFAULT}
+    IF    "${language}" == "${LANGUAGE_EN}"
+        Wait Until Page Contains    ${reservation_passenger_en_information}
         Page Should Contain    ${reservation_passenger_en_information}
         Page Should Contain    ${reservation_passenger_en_add}
     END
@@ -135,8 +136,8 @@ Page Should Contain Passenger Information Field
     Page Should Contain Element    ${reservation_passenger_add_button}
 
 Page Should Contain Passenger Notes Field
-    [Arguments]    ${LANGUAGE_DEFAULT}
-    IF    "${LANGUAGE_DEFAULT}" == "${LANGUAGE_EN}"
+    [Arguments]    ${language}=${LANGUAGE_DEFAULT}
+    IF    "${language}" == "${LANGUAGE_EN}"
         Page Should Contain    ${reservation_passenger_en_notes}
         Page Should Contain    ${reservation_passenger_en_add}
     END
@@ -144,8 +145,8 @@ Page Should Contain Passenger Notes Field
     Page Should Contain Element    ${reservation_passenger_notes_input}
 
 Page Should Contain Booker Information
-    [Arguments]    ${LANGUAGE_DEFAULT}
-    IF    "${LANGUAGE_DEFAULT}" == "${LANGUAGE_EN}"
+    [Arguments]    ${language}=${LANGUAGE_DEFAULT}
+    IF    "${language}" == "${LANGUAGE_EN}"
         Page Should Contain    ${reservation_passenger_en_booker_information}
         Page Should Contain    ${reservation_passenger_en_title}
         Page Should Contain    ${reservation_passenger_en_name}
@@ -161,20 +162,20 @@ Page Should Contain Booker Information
     Page Should Contain Element    ${reservation_passenger_booker_phone_number_input}
 
 The "Passenger" form display correctly
-    [Arguments]    ${LANGUAGE_DEFAULT}
+    [Arguments]    ${language}=${LANGUAGE_DEFAULT}
 
-    Page Should Contain Header Reservation    ${LANGUAGE_DEFAULT}
-    Page Should Contain Process Reservation    ${LANGUAGE_DEFAULT}
+    Page Should Contain Header Reservation    ${language}
+    Page Should Contain Process Reservation    ${language}
 
-    Page Should Contain Passenger Information Field    ${LANGUAGE_DEFAULT}
-    Page Should Contain Passenger Notes Field    ${LANGUAGE_DEFAULT}
-    Page Should Contain Booker Information    ${LANGUAGE_DEFAULT}
+    Page Should Contain Passenger Information Field    ${language}
+    Page Should Contain Passenger Notes Field    ${language}
+    Page Should Contain Booker Information    ${language}
 
     Page Should Contain Button    ${reservation_passenger_back_button}
     Page Should Contain Button    ${reservation_passenger_next_button}
 
-    Page Should Contain Support Footer    ${LANGUAGE_DEFAULT}
-    Page Should Contain Main Footer    ${LANGUAGE_DEFAULT}
+    Page Should Contain Support Footer    ${language}
+    Page Should Contain Main Footer    ${language}
 
     Checkmark in Flight Section is Green
 
@@ -232,6 +233,7 @@ User has filled in the Passenger form correctly
     ...    ${has_second_adult}=${False}
     ...    ${has_child}=${False}
     ...    ${has_infant}=${False}
+    ...    ${language}=${LANGUAGE_DEFAULT}
 
     Click Element    ${reservation_passenger_add_button}
     Wait Until Page Contains Element    ${reservation_passenger_passenger_name_input}[0]    20s
@@ -295,7 +297,7 @@ User has filled in the Passenger form correctly
 
     Click Button    ${reservation_passenger_next_button}
     Sleep    3s
-    ReservationOrderExtrasPage.The "Order Extras" form in "Reservation" page displayed correctly    ${LANGUAGE_DEFAULT}
+    ReservationOrderExtrasPage.The "Order Extras" form in "Reservation" page displayed correctly    ${language}
 
 Get data from "Passenger" form
     ${total_pax} =    Get Text    ${reservation_passenger_passenger_total_pax}

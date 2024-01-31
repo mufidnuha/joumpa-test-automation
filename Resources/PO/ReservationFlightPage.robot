@@ -364,23 +364,24 @@ Set Airline
 
 Search and select the airport in the "Origin" field
     [Arguments]    ${keyword}    ${airport}    ${flight_type}=${empty}
+    Set Airport    ${airport}
     Input Text    ${reservation_flight_origin_input}    ${keyword}
     Wait Until Page Contains    ${airport}    20s
-    Set Airport    ${airport}
     Click Element    ${selected_airport}
 
 Search and select the airport in the "Destination" field
     [Arguments]    ${keyword}    ${airport}    ${flight_type}=${empty}
+    Set Airport    ${airport}
     Input Text    ${reservation_flight_destination_input}    ${keyword}
     Wait Until Page Contains    ${airport}    20s
-    Set Airport    ${airport}
     Click Element    ${selected_airport}
 
 Search and select the airport in the "Airline" field
     [Arguments]    ${keyword}    ${airline}
-    Input Text    ${reservation_flight_flight_info_airline_select_input}    ${keyword}
-    Wait Until Page Contains    ${airline}    20s
     Set Airline    ${airline}
+    Input Text    ${reservation_flight_flight_info_airline_select_input}    ${keyword}
+    Sleep    1s
+    Wait Until Page Contains    ${airline}    20s
     Click Element    ${selected_airline}
 
 User has filled in the Flight form correctly
@@ -397,15 +398,15 @@ User has filled in the Flight form correctly
     ReservationFlightPage.Search and select the airport in the "Origin" field
     ...    ${origin_airport}[keyword]
     ...    ${origin_airport}[airport]
-
+    Sleep    2s
     ReservationFlightPage.Search and select the airport in the "Destination" field
     ...    ${destination_airport}[keyword]
     ...    ${destination_airport}[airport]
-
+    Sleep    2s
     ReservationFlightPage.Search and select the airport in the "Airline" field
     ...    ${airline}[keyword]
     ...    ${airline}[airline]
-
+    Sleep    2s
     Input Text    ${reservation_flight_flight_info_flight_number_input}    ${flight_number}
     Input Text    ${reservation_flight_flight_info_date_input}    ${arrival_date}
     Input Text    ${reservation_flight_flight_info_time_input}    ${est_arrival_time}
